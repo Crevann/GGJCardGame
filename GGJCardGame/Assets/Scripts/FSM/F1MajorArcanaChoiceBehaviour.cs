@@ -12,7 +12,7 @@ public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
         Major[] shownMajors = new Major[majoursNShown];
         for (int i = 0; i < majoursNShown; i++) {
             shownMajors[i] = majors.Dequeue();
-            shownMajors[i].PlayCard();
+            shownMajors[i].InGame();
         }
         
     }

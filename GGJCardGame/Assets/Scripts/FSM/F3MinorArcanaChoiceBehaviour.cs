@@ -11,7 +11,7 @@ public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
         Minor[] shownedMinors = new Minor[minorsNShown];
         for (int i = 0; i < minorsNShown; i++) {
             shownedMinors[i] = minors.Dequeue();
-            shownedMinors[i].PlayCard();
+            shownedMinors[i].InGame();
         }
     }
 

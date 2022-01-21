@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LightProbeProxyVolume))]
 public class Minor : Card
 {
     int soulCoinsCost;
     int bodyIngotCost;
     int soul, body;
 
+    LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost
     {
         get { return soulCoinsCost; }
@@ -16,23 +18,65 @@ public class Minor : Card
     {
         get { return bodyIngotCost; }
     }
-    //TODO proprietà soulo body
+    
+    public int Soul
+    {
+        get { return soul; }
+    }
+
+    public int Body
+    {
+        get
+        {
+            return body;
+        }
+    }
+
     public float stabilityGain = Mathf.Infinity;
     public void Start() {
         if (stabilityGain == Mathf.Infinity) {
             if (soul > body) stabilityGain = soul;
             else stabilityGain = body;
         }
+        bloomEffect = GetComponent<LightProbeProxyVolume>();
     }
 
     void Update()
     {
+        if (CheckCostCard())
+        {
+            bloomEffect.enabled= true;
+        }
+    }
+
+
+    public override void InGame()
+    {
+       
+    }
+
+    public void PlayCard()
+    {
+        MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
+        MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
+        MatchStats.Instance.AddCardToMajor(this);
+    }
+
+    public bool CheckCostCard()
+    {
+        return MatchStats.Instance.currentBodyIngots >= bodyIngotCost && MatchStats.Instance.currentSoulCoins >= soulCoinsCost;
         
     }
 
 
-    public override void PlayCard()
+
+
+    private void OnMouseOver()
     {
-        // TODO controllare che i soldi bastano per giocare la carta e magari aggiungere una linea di dialogo alla vita che ti dice che non hai abbasntanza soldi
+        if (Input.GetMouseButtonDown(0)&& CheckCostCard())
+        {
+            PlayCard();
+
+        }
     }
 }
