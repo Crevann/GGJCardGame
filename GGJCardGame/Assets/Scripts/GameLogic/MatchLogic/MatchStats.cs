@@ -23,7 +23,7 @@ public class MatchStats : MonoBehaviour
     public static MatchStats Instance {
         get {
             if (instance == null){
-                instance = new MatchStats;
+                instance = new MatchStats();
             }
             return instance;
         }

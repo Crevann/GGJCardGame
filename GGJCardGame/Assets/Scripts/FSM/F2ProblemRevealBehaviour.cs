@@ -9,7 +9,7 @@ public class F2ProblemRevealBehaviour : StateMachineBehaviour
         //Shuffle Problems deck
         Queue<Problem> problems = new Queue<Problem>(); //TODO Get the actual queue of Problems
         Problem problemShown = problems.Dequeue();
-        problemShown.PlayCard();
+        problemShown.InGame();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

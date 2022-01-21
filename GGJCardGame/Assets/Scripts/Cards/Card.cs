@@ -17,7 +17,7 @@ public abstract class Card : MonoBehaviour
         
     }
 
-    public virtual void PlayCard()
+    public virtual void InGame()
     {
 
     }
