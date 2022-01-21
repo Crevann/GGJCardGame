@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Problem { public void InGame() { } }
+
 public class F2ProblemRevealBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -9,7 +9,7 @@ public class F2ProblemRevealBehaviour : StateMachineBehaviour
         //Shuffle Problems deck
         Queue<Problem> problems = new Queue<Problem>(); //TODO Get the actual queue of Problems
         Problem problemShown = problems.Dequeue();
-        problemShown.InGame();
+        problemShown.PlayCard();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

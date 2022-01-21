@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
+public static class Stats { public static int bodyIngots, soulCoins;
+    public static Major activeMajor;
+    public static List<Problem> activeProblems;
+    public static List<Minor> activeMinors;
+}
+public class F3GainBehaviour : StateMachineBehaviour
 {
-    [SerializeField] int majoursNShown = 3;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        //Shuffle Major deck (also includes rotarion of the card)
-        Queue<Major> majors = new Queue<Major>(); //TODO Get the actual queue of Majours
-        Major[] shownMajors = new Major[majoursNShown];
-        for (int i = 0; i < majoursNShown; i++) {
-            shownMajors[i] = majors.Dequeue();
-            shownMajors[i].PlayCard();
-        }
-        
+        Stats.bodyIngots += Stats.activeMajor.BodyIngotGain;
+        Stats.soulCoins += Stats.activeMajor.SoulCoinGain;
+        //TODO animation
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

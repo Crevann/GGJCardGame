@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Minor { public void InGame() { } }
+
 public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
 {
     [SerializeField] int minorsNShown = 3;
@@ -11,7 +11,7 @@ public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
         Minor[] shownedMinors = new Minor[minorsNShown];
         for (int i = 0; i < minorsNShown; i++) {
             shownedMinors[i] = minors.Dequeue();
-            shownedMinors[i].InGame();
+            shownedMinors[i].PlayCard();
         }
     }
 
