@@ -59,7 +59,7 @@ public class Minor : Card
     {
         MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
-        //TODO 
+        MatchStats.Instance.AddCardToMajor(this);
     }
 
     public bool CheckCostCard()
