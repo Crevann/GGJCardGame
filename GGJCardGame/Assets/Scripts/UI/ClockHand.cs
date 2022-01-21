@@ -19,7 +19,7 @@ public class ClockHand : MonoBehaviour
         if (targetRotation != currentRotation) transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     public void Rotate() {
-        float a = (((float)-PlayerStats.soul + PlayerStats.body + 6) / 12);
+        float a = (((float)-PlayerStats.Instance.soul + PlayerStats.Instance.body + 6) / 12);
         targetRotation = Quaternion.Lerp(maxRotationSoul, maxRotationBody, a);
         currentRotation = transform.rotation;
     }

@@ -32,7 +32,7 @@ public class MatchStats : MonoBehaviour
 
     private void Awake() {
         currentMajorArcana = null;
-        currentMinorArcanaHand = new Minor[1]; //TODO add Player max deck
+        currentMinorArcanaHand = new Minor[PlayerStats.Instance.MaxCardHard];
         currentMinorsOnMajor = new List<Minor>();
         currentProblems = new Problem[maxProblems];
     }
