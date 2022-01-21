@@ -17,6 +17,7 @@ public class MatchStats : MonoBehaviour
     private LevelDifficulty difficulty;
     private Major currentMajorArcana;
     private Minor[] currentMinorArcanaHand;
+    private List<Minor> currentMinorsOnMajor;
     private Problem[] currentProblems;
 
     private static MatchStats instance;
@@ -31,7 +32,8 @@ public class MatchStats : MonoBehaviour
 
     private void Awake() {
         currentMajorArcana = null;
-        currentMinorArcanaHand = new Minor[1];
+        currentMinorArcanaHand = new Minor[1]; //TODO add Player max deck
+        currentMinorsOnMajor = new List<Minor>();
         currentProblems = new Problem[maxProblems];
     }
 
@@ -45,6 +47,7 @@ public class MatchStats : MonoBehaviour
         currentBodyIngots = 0;
         currentStability = 0;
         EmptyHands();
+        EmptyCardsOnMajor();
     }
 
     public void EmptyHands() {
@@ -60,9 +63,17 @@ public class MatchStats : MonoBehaviour
         }
     }
 
+    public void EmptyCardsOnMajor() {
+        currentMinorsOnMajor.Clear();
+    }
+
     public void SetMajorArcana(Major card) {
         currentMajorArcana = card;
     }
+
+    public void AddCardToMajor(Minor card) {
+        currentMinorsOnMajor.Add(card);
+    } 
 
     public bool AddCardToHand(Minor card) {
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
