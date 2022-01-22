@@ -10,6 +10,6 @@ public class ScriptableMinor : ScriptableObject
     [SerializeField] int bodyIngotCost;
     [SerializeField] int soul, body;
     public float stabilityGain = Mathf.Infinity;
-    [SerializeField] Texture cardFace;
+    [SerializeField] Sprite cardFace;
 }
 

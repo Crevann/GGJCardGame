@@ -7,7 +7,7 @@ public class ScriptableMajor : ScriptableObject
 {
     [SerializeField] string cardName;
     [SerializeField] int soulCoinGain, bodyIngotGain;
-    [SerializeField] Texture cardFace;
+    [SerializeField] Sprite cardFace;
     [SerializeField] int reverceSoulCoinGain, reverseBodyIngotGain;
 }
 

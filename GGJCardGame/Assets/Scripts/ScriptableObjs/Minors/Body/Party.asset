@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddc9d38268b1889448430b985a6f98d2, type: 3}
-  m_Name: Cry
+  m_Name: Party
   m_EditorClassIdentifier: 
-  cardName: Cry
+  cardName: Party
   soulCoinsCost: 0
   bodyIngotCost: 0
   soul: 0
   body: 0
   stabilityGain: Infinity
-  cardFace: {fileID: 0}
+  cardFace: {fileID: -1302193065, guid: 6ceeabb240830584394782c5832fb463, type: 3}

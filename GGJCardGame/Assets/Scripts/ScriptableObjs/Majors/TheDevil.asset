@@ -15,6 +15,6 @@ MonoBehaviour:
   cardName: The Devil
   soulCoinGain: 1
   bodyIngotGain: 2
-  cardFace: {fileID: 0}
+  cardFace: {fileID: -552741478, guid: 6ceeabb240830584394782c5832fb463, type: 3}
   reverceSoulCoinGain: 1
   reverseBodyIngotGain: 3
