@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class MatchLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Deck deck;
+    private Minor selectedCard;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //When card is hovered over, show description
+    public void SelectCard(Minor card) {
+        selectedCard = card;
+    }
+    public void PlaySelectedCard() {
+        selectedCard.PlayCard();
+    }
+    public void GetCardFromDeck() {
+        Minor card = (Minor) deck.Dequeque();
+        MatchStats.Instance.AddCardToHand(card);
+    }
+    public void ChooseMajorArcana(Major card) {
+        MatchStats.Instance.SetMajorArcana(card);
+    }
+    public void StartTurn() {
+        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.currentMajorArcana.BodyIngotGain;
+        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.currentMajorArcana.SoulCoinGain;
+    }
+    public void EndTurn() {
+        //TODO Go to next FSM state
     }
 }

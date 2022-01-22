@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeckScrpit : MonoBehaviour{
+public class Deck : MonoBehaviour{
     [SerializeField] Card[] deck;
     [HideInInspector] public Queue<Card> currentDeck = new Queue<Card>();
     private Card tempGO;
