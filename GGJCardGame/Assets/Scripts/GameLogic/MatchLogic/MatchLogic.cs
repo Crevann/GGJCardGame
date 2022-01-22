@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class MatchLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private Minor selectedCard;
+
+    //When card is hovered over, show description
+    public void SelectCard(Minor card) {
+        selectedCard = card;
+    }
+    public void PlaySelectedCard() {
+        selectedCard.PlayCard();
+    }
+    public void GetCardFromDeck() {
         
     }
+    public void ChooseMajorArcana() {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    }
+    public void SkipTurn() {
+
+    }
+    public void EndTurn() {
+
     }
 }
