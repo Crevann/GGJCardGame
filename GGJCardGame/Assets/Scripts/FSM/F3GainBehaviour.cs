@@ -1,17 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public static class Stats { public static int bodyIngots, soulCoins;
-    public static Major activeMajor;
-    public static List<Problem> activeProblems;
-    public static List<Minor> activeMinors;
-}
+
 public class F3GainBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        Stats.bodyIngots += Stats.activeMajor.BodyIngotGain;
-        Stats.soulCoins += Stats.activeMajor.SoulCoinGain;
+        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.currentMajorArcana.BodyIngotGain;
+        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.currentMajorArcana.SoulCoinGain;
         //TODO animation
     }
 

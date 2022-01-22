@@ -7,12 +7,12 @@ public class F4EndGameBehaviour : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         int stability = 0;
-        foreach (Problem p in Stats.activeProblems) {
-            stability += p.StabilityChange;
-        }
-        foreach (Minor m in Stats.activeMinors) {
-            stability += (int)m.stabilityGain;
-        }
+        
+        stability += MatchStats.Instance.GetProblemsStability();
+        stability += MatchStats.Instance.GetMinorStability();
+        
+        //TODO connettere la stabilità all'passo sucessivo, new rownd o lose
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -6,9 +6,8 @@ public class F2ProblemRevealBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        //Shuffle Problems deck
-        Queue<Problem> problems = new Queue<Problem>(); //TODO Get the actual queue of Problems
-        Problem problemShown = problems.Dequeue();
+        MatchLogic.Instance.problemsDeck.Shuffle(); //Shuffle Problems deck
+        Problem problemShown = MatchLogic.Instance.problemsDeck.Dequeque();
         problemShown.InGame();
     }
 

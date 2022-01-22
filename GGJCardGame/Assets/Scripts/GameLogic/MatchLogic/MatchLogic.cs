@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class MatchLogic : MonoBehaviour
 {
-    [SerializeField] Deck deck;
+    //[SerializeField] Deck deck;
+    [SerializeField] public MajorDeck majorDeck;
+    [SerializeField] public MinorDeck minorDeck;
+    [SerializeField] public ProblemsDeck problemsDeck;
     private Minor selectedCard;
+
+    private static MatchLogic instance;
+    public static MatchLogic Instance {
+        get {
+            if (instance == null) {
+                instance = new MatchLogic();
+            }
+            return instance;
+        }
+    }
 
     //When card is hovered over, show description
     public void SelectCard(Minor card) {
@@ -15,8 +28,8 @@ public class MatchLogic : MonoBehaviour
         selectedCard.PlayCard();
     }
     public void GetCardFromDeck() {
-        Minor card = (Minor) deck.Dequeque();
-        MatchStats.Instance.AddCardToHand(card);
+        //Minor card = (Minor) deck.Dequeque();
+        //MatchStats.Instance.AddCardToHand(card);
     }
     public void ChooseMajorArcana(Major card) {
         MatchStats.Instance.SetMajorArcana(card);
