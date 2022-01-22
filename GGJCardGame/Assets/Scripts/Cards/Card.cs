@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Card : MonoBehaviour
 {
     Animator anim;
+    [SerializeField] Texture cardBack;
     // Start is called before the first frame update
     void Start()
     {

@@ -6,6 +6,7 @@ public class Major : Card
 {
     int soulCoinGain;
     int bodyIngotGain;
+    [SerializeField] ScriptableMajor obj;
     
     public int SoulCoinGain
     {
