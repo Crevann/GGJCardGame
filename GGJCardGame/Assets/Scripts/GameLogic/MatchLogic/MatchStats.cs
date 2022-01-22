@@ -15,7 +15,7 @@ public class MatchStats : MonoBehaviour
     public int currentSoulCoins;
     public int currentBodyIngots;
     private LevelDifficulty difficulty;
-    private Major currentMajorArcana;
+    public Major currentMajorArcana;
     private Minor[] currentMinorArcanaHand;
     private List<Minor> currentMinorsOnMajor;
     private Problem[] currentProblems;
