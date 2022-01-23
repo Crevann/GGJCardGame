@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Deck<CardType> : MonoBehaviour{
-    [SerializeField] CardType[] deck;
+    protected CardType[] deck;
     [SerializeField] 
     [HideInInspector] public Queue<CardType> currentDeck = new Queue<CardType>();
     private CardType tempGO;
     private List<CardType> outOfDeck = new List<CardType>();
-    public void Start() {
+    public virtual void Start() {
         RestoreOriginalDeck();
     }
     public void Shuffle() {

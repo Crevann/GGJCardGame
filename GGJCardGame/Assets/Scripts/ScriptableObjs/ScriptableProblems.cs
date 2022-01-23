@@ -8,5 +8,6 @@ public class ScriptableProblems : ScriptableObject
     [SerializeField] string cardName;
     [SerializeField] int stabilityChange;
     [SerializeField] string description;
+    [SerializeField] Sprite cardFace;
 }
 

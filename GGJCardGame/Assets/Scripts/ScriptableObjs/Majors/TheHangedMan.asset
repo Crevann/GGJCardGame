@@ -15,6 +15,6 @@ MonoBehaviour:
   cardName: The Hanged Man
   soulCoinGain: 3
   bodyIngotGain: 1
-  cardFace: {fileID: 0}
+  cardFace: {fileID: 2126358736, guid: 6ceeabb240830584394782c5832fb463, type: 3}
   reverceSoulCoinGain: 1
   reverseBodyIngotGain: 2

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc9d38268b1889448430b985a6f98d2, type: 3}
+  m_Name: Volunteering
+  m_EditorClassIdentifier: 
+  cardName: Volunteering
+  soulCoinsCost: 0
+  bodyIngotCost: 0
+  soul: 0
+  body: 0
+  stabilityGain: Infinity
+  cardFace: {fileID: 1095296711, guid: 6ceeabb240830584394782c5832fb463, type: 3}
