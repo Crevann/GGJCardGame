@@ -2,12 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(LightProbeProxyVolume))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Minor : Card {
+    string cardName;
     int soulCoinsCost;
     int bodyIngotCost;
     int soul, body;
-    [SerializeField] ScriptableMinor minorData;
+    public float stabilityGain = Mathf.Infinity;
+    Sprite cardFace {
+        set {
+            GetComponent<SpriteRenderer>().sprite = value;
+        }
+    }
+    public ScriptableMinor minorData {
+        set {
+            cardName = value.cardName;
+            soulCoinsCost = value.soulCoinsCost;
+            bodyIngotCost = value.bodyIngotCost;
+            soul = value.soul == 0 ? soulCoinsCost : value.soul;
+            body = value.body == 0 ? bodyIngotCost : value.body;
+            stabilityGain = value.stabilityGain != Mathf.Infinity ? value.stabilityGain : (soulCoinsCost >= bodyIngotCost ? soulCoinsCost : bodyIngotCost);
+            cardFace = value.cardFace;
+        }
+    }
 
     LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost
@@ -32,7 +49,7 @@ public class Minor : Card {
         }
     }
 
-    public float stabilityGain = Mathf.Infinity;
+    
     public void Start() {
         if (stabilityGain == Mathf.Infinity) {
             if (soul > body) stabilityGain = soul;
