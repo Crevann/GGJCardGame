@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Scammed
   stabilityChange: 0
-  description: You Spilled the coffee on yourself
+  description: You just struck an excellent deal with that polite man,  who sold
+    you a fine RUPEX watch for the low price of 150$ .  It is not as elegant as you
+    immagined it, however.
   cardFace: {fileID: 1191733033, guid: 6ceeabb240830584394782c5832fb463, type: 3}

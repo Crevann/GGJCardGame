@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: CoffeTime
   stabilityChange: 0
-  description: You Spilled the coffee on yourself
+  description: You Spilled some very hot coffee on yourself !
   cardFace: {fileID: -2026520160, guid: 6ceeabb240830584394782c5832fb463, type: 3}

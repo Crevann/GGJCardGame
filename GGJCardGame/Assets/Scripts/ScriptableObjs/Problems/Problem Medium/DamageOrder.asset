@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Damaged Order
   stabilityChange: 0
-  description: You Spilled the coffee on yourself
+  description: As you sit down and unwind your mother in law informs you that your
+    package is damaged. Not knowing whether it was broken by her or the deliveryman,
+    you settle on hating both.
   cardFace: {fileID: 998117764, guid: 6ceeabb240830584394782c5832fb463, type: 3}

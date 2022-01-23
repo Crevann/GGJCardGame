@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Pandemic
   stabilityChange: 0
-  description: You Spilled the coffee on yourself
+  description: 'You can''t figure out why people around you are wearing masks, '
   cardFace: {fileID: 1349628421, guid: 6ceeabb240830584394782c5832fb463, type: 3}

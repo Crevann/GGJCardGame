@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: WonABet
   stabilityChange: 0
-  description: You just found a lucky coin, congrats!
+  description: sometimes you have to take some risks, this time it payed off
   cardFace: {fileID: -1956913161, guid: 6ceeabb240830584394782c5832fb463, type: 3}

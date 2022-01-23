@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Cry
   m_EditorClassIdentifier: 
   cardName: Cry
-  soulCoinsCost: 0
+  soulCoinsCost: 1
   bodyIngotCost: 0
-  soul: 0
+  soul: 2
   body: 0
   stabilityGain: Infinity
   cardFace: {fileID: 1022677633, guid: 6ceeabb240830584394782c5832fb463, type: 3}

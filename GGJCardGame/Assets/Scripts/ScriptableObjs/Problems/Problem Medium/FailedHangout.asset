@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Failed hangout
   stabilityChange: 0
-  description: You Spilled the coffee on yourself
+  description: You were really looking forward to this particular meeting, it's real
+    shame they stood you up.
   cardFace: {fileID: -520219135, guid: 6ceeabb240830584394782c5832fb463, type: 3}

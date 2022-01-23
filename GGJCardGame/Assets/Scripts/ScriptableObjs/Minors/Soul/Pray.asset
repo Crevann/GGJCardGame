@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Pray
   m_EditorClassIdentifier: 
   cardName: Pray
-  soulCoinsCost: 0
-  bodyIngotCost: 0
-  soul: 0
+  soulCoinsCost: 2
+  bodyIngotCost: 1
+  soul: 3
   body: 0
   stabilityGain: Infinity
   cardFace: {fileID: -1256190021, guid: 6ceeabb240830584394782c5832fb463, type: 3}
