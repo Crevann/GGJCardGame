@@ -1,23 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(SpriteRenderer))]
 public class Major : Card
 {
+    string cardName;
     int soulCoinGain;
     int bodyIngotGain;
-
-    //public ScriptableMajor minorData {
-    //    set {
-    //        cardName = value.cardName;
-    //        soulCoinsCost = value.soulCoinsCost;
-    //        bodyIngotCost = value.bodyIngotCost;
-    //        soul = value.soul == 0 ? soulCoinsCost : value.soul;
-    //        body = value.body == 0 ? bodyIngotCost : value.body;
-    //        stabilityGain = value.stabilityGain != Mathf.Infinity ? value.stabilityGain : (soulCoinsCost >= bodyIngotCost ? soulCoinsCost : bodyIngotCost);
-    //        cardFace = value.cardFace;
-    //    }
-    //}
+    int reverceSoulCoinGain, reverseBodyIngotGain;
+    string[] descriptionArray, flippedDescriptionArray;
+    Sprite cardFace {
+        set {
+            GetComponent<SpriteRenderer>().sprite = value;
+        }
+    }
+    public ScriptableMajor majorData {
+        set {
+            cardName = value.cardName;
+            soulCoinGain = value.soulCoinGain;
+            bodyIngotGain = value.bodyIngotGain;
+            reverceSoulCoinGain = value.reverceSoulCoinGain;
+            reverseBodyIngotGain = value.reverseBodyIngotGain;
+            descriptionArray = value.descriptionArray;
+            flippedDescriptionArray = value.flippedDescriptionArray;
+            cardFace = value.cardFace;
+        }
+    }
     public int SoulCoinGain
     {
         get { return soulCoinGain;}
