@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LightProbeProxyVolume))]
-public class Minor : Card
-{
+public class Minor : Card {
     int soulCoinsCost;
     int bodyIngotCost;
     int soul, body;
+    [SerializeField] ScriptableMinor minorData;
 
     LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost

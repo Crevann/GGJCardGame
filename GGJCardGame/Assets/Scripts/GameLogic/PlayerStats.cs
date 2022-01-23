@@ -18,10 +18,12 @@ public class PlayerStats : MonoBehaviour
     private static PlayerStats instance;
     public static PlayerStats Instance {
         get {
-            if (instance == null) {
-                instance = new PlayerStats();
-            }
             return instance;
+        }
+    }
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
         }
     }
 }

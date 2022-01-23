@@ -13,13 +13,15 @@ public class MatchLogic : MonoBehaviour
     private static MatchLogic instance;
     public static MatchLogic Instance {
         get {
-            if (instance == null) {
-                instance = new MatchLogic();
-            }
             return instance;
         }
     }
 
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
     //When card is hovered over, show description
     public void SelectCard(Minor card) {
         selectedCard = card;

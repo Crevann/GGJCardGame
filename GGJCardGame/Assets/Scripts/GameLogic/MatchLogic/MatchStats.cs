@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MatchStats : MonoBehaviour
-{
+public class MatchStats : MonoBehaviour {
     public enum LevelDifficulty {
         easy,
         medium,
@@ -18,21 +17,22 @@ public class MatchStats : MonoBehaviour
     public Major currentMajorArcana;
 
     [HideInInspector] public Major[] shownMajorF1;
-    private Minor[] currentMinorArcanaHand;
+    [SerializeField] private Minor[] currentMinorArcanaHand;
+    public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
     private List<Minor> currentMinorsOnMajor;
     private Problem[] currentProblems;
 
     private static MatchStats instance;
     public static MatchStats Instance {
         get {
-            if (instance == null){
-                instance = new MatchStats();
-            }
             return instance;
         }
     }
 
     private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
         currentMajorArcana = null;
         currentMinorArcanaHand = new Minor[PlayerStats.Instance.MaxCardHard];
         currentMinorsOnMajor = new List<Minor>();
@@ -109,5 +109,14 @@ public class MatchStats : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public int CurrentMinorArcanaInHand() {
+        for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
+            if(currentMinorArcanaHand[i] == null) {
+                return i;
+            }
+        }
+        return currentMinorArcanaHand.Length;
     }
 }
