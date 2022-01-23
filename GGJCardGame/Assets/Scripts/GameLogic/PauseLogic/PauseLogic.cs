@@ -61,13 +61,19 @@ public class PauseLogic : MonoBehaviour
     {
         pausePanel.gameObject.SetActive(true);
         isPaused = true;
-        Time.timeScale = 0f;
+    }
+
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#endif
+        Application.Quit();
     }
 
     void Resume()
     {
         pausePanel.gameObject.SetActive(false);
         isPaused = false;
-        Time.timeScale = 1f;
     }
 }
