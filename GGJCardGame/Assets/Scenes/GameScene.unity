@@ -1190,7 +1190,7 @@ MonoBehaviour:
   majorDeckPos: {fileID: 1771679284}
   currentMinorArcanaHand: []
   startingMinorPosition: {fileID: 437203503}
-  spacing: 0
+  spacing: 1
   maxProblems: 3
   firstProblemPos: {fileID: 2027324665}
   lastProblemPos: {fileID: 549454715}
