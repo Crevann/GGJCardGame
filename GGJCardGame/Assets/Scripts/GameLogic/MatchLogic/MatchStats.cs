@@ -15,8 +15,14 @@ public class MatchStats : MonoBehaviour {
     public int currentBodyIngots;
     private LevelDifficulty difficulty;
     public Major currentMajorArcana;
-
-    [HideInInspector] public Major[] shownMajorF1;
+    [Header("SET MAJOR")]
+    private Major[] shownMajorF1;
+    [HideInInspector] public Major[] ShownMajorF1 {
+        set {
+            shownMajorF1 = value;
+            shownMajorF1[0].transform.position = Vector3.zero;
+        }
+    }
     [SerializeField] private Minor[] currentMinorArcanaHand;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
     private List<Minor> currentMinorsOnMajor;

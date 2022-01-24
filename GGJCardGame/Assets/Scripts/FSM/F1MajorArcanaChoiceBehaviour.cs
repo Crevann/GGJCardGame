@@ -13,8 +13,8 @@ public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
         Major[] shownMajors = new Major[majoursNShown];
         for (int i = 0; i < majoursNShown; i++) {
             shownMajors[i] = MatchLogic.Instance.majorDeck.Dequeque();
-            shownMajors[i].InGame();
+            //shownMajors[i].InGame();
         }
-        MatchStats.Instance.shownMajorF1 = shownMajors;
+        MatchStats.Instance.ShownMajorF1 = shownMajors;
     }
 }

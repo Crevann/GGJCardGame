@@ -20,7 +20,7 @@ public abstract class Card : MonoBehaviour
 
     public virtual void InGame()
     {
-
+        //shows itself to be choosen
     }
 
     public virtual void FlipCard()
