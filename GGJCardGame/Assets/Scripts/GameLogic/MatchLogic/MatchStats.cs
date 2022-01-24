@@ -9,7 +9,7 @@ public class MatchStats : MonoBehaviour {
         hard
     }
 
-    [Range(0, 5)] public int maxProblems;
+    [SerializeField] private int maxProblems;
     public int currentStability;
     public int currentSoulCoins;
     public int currentBodyIngots;
