@@ -9,35 +9,18 @@ public class MatchStats : MonoBehaviour {
         hard
     }
 
-    [SerializeField] private int maxProblems;
+    [Range(0, 5)] public int maxProblems;
     public int currentStability;
     public int currentSoulCoins;
     public int currentBodyIngots;
     private LevelDifficulty difficulty;
-    
+    public Major currentMajorArcana;
     [Header("SET MAJOR")]
-    [SerializeField] Vector3 posCard1, posCard2, posCard3;
-    Major currentMajorArcana;
-    public Major CurrentMajorArcana {
-        set {
-            currentMajorArcana = value;
-            for (int i = 0; i < shownMajorF1.Length; i++) {
-                if (currentMajorArcana == shownMajorF1[i]) continue;
-                shownMajorF1[i].MoveTo(majorDeckPos);
-            }
-        }
-    }
-    public Vector3 majorDeckPos;
     private Major[] shownMajorF1;
     [HideInInspector] public Major[] ShownMajorF1 {
         set {
             shownMajorF1 = value;
-            shownMajorF1[0].transform.position = posCard1;
-            shownMajorF1[1].transform.position = posCard2;
-            shownMajorF1[2].transform.position = posCard3;
-            shownMajorF1[0].gameObject.SetActive(true);
-            shownMajorF1[1].gameObject.SetActive(true);
-            shownMajorF1[2].gameObject.SetActive(true);
+            shownMajorF1[0].transform.position = Vector3.zero;
         }
     }
     [SerializeField] private Minor[] currentMinorArcanaHand;
