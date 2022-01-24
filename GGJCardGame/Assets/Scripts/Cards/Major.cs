@@ -9,6 +9,8 @@ public class Major : Card
     int bodyIngotGain;
     int reverceSoulCoinGain, reverseBodyIngotGain;
     string[] descriptionArray, flippedDescriptionArray;
+    Vector3 targetPos;
+    public float movementSpeed;
     Sprite cardFace {
         set {
             GetComponent<SpriteRenderer>().sprite = value;
@@ -35,14 +37,21 @@ public class Major : Card
     {
         get { return bodyIngotGain;}
     }
-
+    public void MoveTo(Vector3 pos) {
+        targetPos = pos;
+    }
+    private void OnMouseDown() {
+        if(targetPos == transform.position) {
+            MatchStats.Instance.CurrentMajorArcana = this;
+        }
+    }
     void Start()
     {
-        
+        targetPos = transform.position;
     }
 
     void Update()
     {
-        
+        if (targetPos != transform.position) transform.position = Vector3.Lerp(transform.position, targetPos, movementSpeed);
     }
 }
