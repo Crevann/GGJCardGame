@@ -16,10 +16,11 @@ public class MatchStats : MonoBehaviour {
     private LevelDifficulty difficulty;
 
     [Header("ANIMATOR")]
-    [SerializeField] Animator animator;
+    public Animator animator;
     public string choseMajorParam;
     public string finishedStateParam;
     public string currentTurnParam;
+    public string endGameParam;
     
 
     [Header("SET MAJOR")]
@@ -40,6 +41,7 @@ public class MatchStats : MonoBehaviour {
         get { return currentMajorArcana; }
     }
     
+
     [HideInInspector]
     public Major[] ShownMajorF1 {
         set {
@@ -57,6 +59,8 @@ public class MatchStats : MonoBehaviour {
     }
     [Header("SET MINOR")]
     [SerializeField] private Minor[] currentMinorArcanaHand;
+    [SerializeField] private Transform startingMinorPosition;
+    [SerializeField] private float spacing;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
     private List<Minor> currentMinorsOnMajor;
 
@@ -132,6 +136,9 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void AddCardToMajor(Minor card) {
+        card.MoveTo(new Vector3(startingMinorPosition.position.x + spacing * currentMinorsOnMajor.Count, 
+            startingMinorPosition.position.y, 
+            0));
         currentMinorsOnMajor.Add(card);
     }
 
