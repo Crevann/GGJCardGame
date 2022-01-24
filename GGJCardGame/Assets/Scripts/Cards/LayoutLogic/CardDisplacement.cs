@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardHandUI : MonoBehaviour
+public class CardDisplacement : MonoBehaviour
 {
     private float spacing;
     [SerializeField] private float handSize;
