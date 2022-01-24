@@ -6,8 +6,8 @@ public class F3GainBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.currentMajorArcana.BodyIngotGain;
-        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.currentMajorArcana.SoulCoinGain;
+        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.CurrentMajorArcana.BodyIngotGain;
+        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
         //TODO animation
     }
 
