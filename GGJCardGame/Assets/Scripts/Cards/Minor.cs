@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Minor : Card {
+    private bool isPlayed;
     string cardName;
     int soulCoinsCost;
     int bodyIngotCost;
@@ -75,6 +76,7 @@ public class Minor : Card {
 
     public void PlayCard()
     {
+        isPlayed = true;
         MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
@@ -94,7 +96,9 @@ public class Minor : Card {
         if (Input.GetMouseButtonDown(0) && CheckCostCard())
         {
             if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice")){
-                PlayCard();
+                if (!isPlayed) {
+                    PlayCard();
+                }
             }
         }
     }
