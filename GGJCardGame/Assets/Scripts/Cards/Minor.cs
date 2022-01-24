@@ -17,6 +17,7 @@ public class Minor : Card {
     public ScriptableMinor minorData {
         set {
             cardName = value.cardName;
+            name = value.cardName + "(Minor)";
             soulCoinsCost = value.soulCoinsCost;
             bodyIngotCost = value.bodyIngotCost;
             soul = value.soul == 0 ? soulCoinsCost : value.soul;
@@ -50,7 +51,8 @@ public class Minor : Card {
     }
 
     
-    public void Start() {
+    public override void Start() {
+        base.Start();
         if (stabilityGain == Mathf.Infinity) {
             if (soul > body) stabilityGain = soul;
             else stabilityGain = body;
@@ -58,12 +60,13 @@ public class Minor : Card {
         bloomEffect = GetComponent<LightProbeProxyVolume>();
     }
 
-    void Update()
-    {
-        if (CheckCostCard())
-        {
-            bloomEffect.enabled= true;
+
+    public override void Update() {
+        base.Update();
+        if (CheckCostCard()) {
+            bloomEffect.enabled = true;
         }
+        
     }
 
 

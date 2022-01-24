@@ -15,6 +15,7 @@ public class Problem : Card
     public ScriptableProblems problemsData {
         set {
             cardName = value.cardName;
+            name = value.cardName +"(Problem)";
             stabilityChange = value.stabilityChange;
             description = value.description;
             cardFace = value.cardFace;
@@ -23,15 +24,5 @@ public class Problem : Card
     public int StabilityChange
     {
         get { return stabilityChange;}
-    }
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

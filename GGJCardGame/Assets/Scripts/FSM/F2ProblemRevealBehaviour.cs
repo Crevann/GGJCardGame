@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class F2ProblemRevealBehaviour : StateMachineBehaviour
 {
+    
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         MatchLogic.Instance.problemsDeck.Shuffle(); //Shuffle Problems deck
         Problem problemShown = MatchLogic.Instance.problemsDeck.Dequeque();
-        problemShown.InGame();
+        
+        int i = MatchStats.Instance.AddProblem(problemShown);
+        problemShown.MoveTo(Vector3.Lerp(MatchStats.Instance.firstProblemPos.position, MatchStats.Instance.lastProblemPos.position, i / MatchStats.Instance.maxProblems), false, true);
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
