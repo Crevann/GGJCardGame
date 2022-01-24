@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211222020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -3.25, z: 0}
+  m_LocalPosition: {x: -4.75, y: -3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580c3c54d27bb4844bcd94985f56c81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handSize: 15
+  handSize: 12
 --- !u!1 &248702861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1045,8 @@ MonoBehaviour:
   currentBodyIngots: 0
   animator: {fileID: 727351216}
   choseMajorParam: ChoseMajor
+  finishedStateParam: FinishedState
+  currentTurnParam: CurrentTurn
   posCard1: {fileID: 500481958}
   posCard2: {fileID: 412368002}
   posCard3: {fileID: 148346841}
@@ -1240,8 +1242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aeadabcb99ef4346895af6c3bb1b681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minorsToCreate: []
-  minorCardPrefab: {fileID: 0}
+  minorsToCreate:
+  - {fileID: 11400000, guid: 66560f94876faf94b9a197bd9c5ddd46, type: 2}
+  - {fileID: 11400000, guid: 2151bb78ec50d054a9d9f0a219e7424e, type: 2}
+  - {fileID: 11400000, guid: eef12d6a43e7d9142bfa063988ac797f, type: 2}
+  - {fileID: 11400000, guid: 837edda141548b344bab609a0806f5ed, type: 2}
+  - {fileID: 11400000, guid: dcaf631490f8c5b42aae6cad97f90557, type: 2}
+  - {fileID: 11400000, guid: 0eaefd79d66f88745b5ac85b53927bad, type: 2}
+  - {fileID: 11400000, guid: f8b32487b809b8b4ca7654f24c9b956d, type: 2}
+  - {fileID: 11400000, guid: 4f30c357b56ea0e4380ef01e3971bb40, type: 2}
+  - {fileID: 11400000, guid: 05f6387550aa69b4c9f8db65eafae23d, type: 2}
+  - {fileID: 11400000, guid: 90e61bea9904d9743913814c30ce85b9, type: 2}
+  - {fileID: 11400000, guid: 71aa8ddf0fd3dbf4598aa91677069faa, type: 2}
+  - {fileID: 11400000, guid: 8349a97903d120049a57178e98207f87, type: 2}
+  minorCardPrefab: {fileID: 4559637805127611488, guid: 32922b7da7f06584cb132829c6d7c9a7, type: 3}
 --- !u!212 &1051637944
 SpriteRenderer:
   m_ObjectHideFlags: 0

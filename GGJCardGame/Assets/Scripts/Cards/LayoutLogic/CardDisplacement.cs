@@ -21,7 +21,7 @@ public class CardDisplacement : MonoBehaviour
                 float cardLocalPosition = cardsInHand > 1 ?
                     spacing * i :
                     handSize * 0.5f;
-                currentCards[i].transform.localPosition = new Vector2(cardLocalPosition, 0);
+                currentCards[i].MoveTo(new Vector3(transform.position.x + cardLocalPosition, transform.position.y, 0));
             }
         }
     }

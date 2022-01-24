@@ -9,8 +9,10 @@ public class MinorDeck : Deck<Minor>
     public override void Start() {
         deck = new Minor[minorsToCreate.Length];
         for (int i = 0; i < minorsToCreate.Length; i++) {
-            deck[0] = Instantiate(minorCardPrefab);
-            deck[0].minorData = minorsToCreate[0];
+            deck[i] = Instantiate(minorCardPrefab);
+            deck[i].minorData = minorsToCreate[i];
+            deck[i].transform.parent = transform;
+            deck[i].gameObject.SetActive(false);
         }
         base.Start();
     }

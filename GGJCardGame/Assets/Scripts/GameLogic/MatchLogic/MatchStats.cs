@@ -17,7 +17,9 @@ public class MatchStats : MonoBehaviour {
 
     [Header("ANIMATOR")]
     [SerializeField] Animator animator;
-    [SerializeField] string choseMajorParam;
+    public string choseMajorParam;
+    public string finishedStateParam;
+    public string currentTurnParam;
     
 
     [Header("SET MAJOR")]

@@ -27,7 +27,6 @@ public class Minor : Card {
         }
     }
 
-    LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost
     {
         get { return soulCoinsCost; }
@@ -57,14 +56,13 @@ public class Minor : Card {
             if (soul > body) stabilityGain = soul;
             else stabilityGain = body;
         }
-        bloomEffect = GetComponent<LightProbeProxyVolume>();
     }
 
 
     public override void Update() {
         base.Update();
         if (CheckCostCard()) {
-            bloomEffect.enabled = true;
+
         }
         
     }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3709908309154151805}
   - component: {fileID: 586740155165409348}
-  - component: {fileID: 3375071407035114978}
   - component: {fileID: 4559637805127611488}
+  - component: {fileID: 4530926476751122852}
   m_Layer: 0
   m_Name: MinorArcana
   m_TagString: Untagged
@@ -86,26 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!259 &3375071407035114978
-LightProbeProxyVolume:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834585394463093532}
-  m_Enabled: 0
-  m_BoundingBoxMode: 0
-  m_ResolutionX: 2
-  m_ResolutionY: 2
-  m_ResolutionZ: 2
-  m_ResolutionProbesPerUnit: 0.25
-  m_BoundingBoxSize: {x: Infinity, y: Infinity, z: Infinity}
-  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
-  m_ResolutionMode: 0
-  m_ProbePositionMode: 0
-  m_RefreshMode: 0
-  m_QualityMode: 1
-  m_DataFormat: 1
 --- !u!114 &4559637805127611488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,4 +99,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardBack: {fileID: -1740283951, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  movementSpeed: 3
+  minRot: {x: 0, y: 0, z: 0, w: 0}
+  maxRot: {x: 0, y: 0, z: 0, w: 0}
   stabilityGain: Infinity
+--- !u!61 &4530926476751122852
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834585394463093532}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 3.0078127}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3.0078127}
+  m_EdgeRadius: 0
