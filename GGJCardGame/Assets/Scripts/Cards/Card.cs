@@ -8,7 +8,7 @@ public abstract class Card : MonoBehaviour
     [SerializeField] Sprite cardBack;
     [SerializeField] float movementSpeed = 3;
     [SerializeField] Quaternion minRot, maxRot;
-    Quaternion targetRot;
+    protected Quaternion targetRot;
     protected Vector3 targetPos;
     protected bool thenDisable;
 
@@ -23,10 +23,11 @@ public abstract class Card : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if ((targetPos - transform.position).sqrMagnitude > 0.5f) {
-            transform.position = Vector3.Lerp(transform.position, targetPos, movementSpeed * Time.deltaTime);
-            if (targetRot != transform.rotation) 
+        if (targetRot != transform.rotation) 
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, movementSpeed * Time.deltaTime);
+        if ((targetPos - transform.position).sqrMagnitude > 0.01f) {
+            transform.position = Vector3.Lerp(transform.position, targetPos, movementSpeed * Time.deltaTime);
+         
         } else if (thenDisable) gameObject.SetActive(false);
     }
     public void MoveTo(Vector3 pos, bool thenDisable = false, bool rotate = false) {
