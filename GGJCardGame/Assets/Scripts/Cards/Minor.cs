@@ -97,7 +97,7 @@ public class Minor : Card {
     private void OnMouseOver()
     {
         if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice") && 
-            Input.GetMouseButtonDown(0) && CheckCostCard())
+            Input.GetMouseButtonDown(0) && CheckCostCard() && !MatchStats.Instance.IsPaused)
         {
             if (!isPlayed) {
                 PlayCard();

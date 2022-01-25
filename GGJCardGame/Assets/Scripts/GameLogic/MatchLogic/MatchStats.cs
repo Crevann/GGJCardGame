@@ -16,6 +16,13 @@ public class MatchStats : MonoBehaviour {
     public int currentSoulCoins = 0;
     public int currentBodyIngots = 0;
     private LevelDifficulty difficulty;
+    private bool isPaused = false;
+
+    public bool IsPaused
+    {
+        get { return isPaused; }
+        set { isPaused = value; }
+    }
 
     [Header("ANIMATOR")]
     public Animator animator;

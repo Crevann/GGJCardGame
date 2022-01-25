@@ -54,6 +54,7 @@ public class PausePageAnimations : MonoBehaviour
         SwitchState(pageState.idle);
     }
 
+
     public void SwitchState(pageState _state)
     {
         state = _state;
