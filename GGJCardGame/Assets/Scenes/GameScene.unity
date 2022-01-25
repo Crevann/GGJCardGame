@@ -523,8 +523,8 @@ MonoBehaviour:
   body: 0
   maxSoulCoin: 0
   maxBodyIngots: 0
-  maxCardHard: 9
-  stabilityRange: 10
+  maxCardHard: 3
+  stabilityRange: 100
 --- !u!1 &412368001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,6 +2522,22 @@ PrefabInstance:
     - target: {fileID: 985551139009322602, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
       propertyPath: m_UseSpriteMesh
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985551139650996245, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
+      propertyPath: maxRotationBody.w
+      value: 0.7489557
+      objectReference: {fileID: 0}
+    - target: {fileID: 985551139650996245, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
+      propertyPath: maxRotationBody.z
+      value: -0.66262007
+      objectReference: {fileID: 0}
+    - target: {fileID: 985551139650996245, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
+      propertyPath: maxRotationSoul.w
+      value: 0.7489557
+      objectReference: {fileID: 0}
+    - target: {fileID: 985551139650996245, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
+      propertyPath: maxRotationSoul.z
+      value: 0.66262007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}

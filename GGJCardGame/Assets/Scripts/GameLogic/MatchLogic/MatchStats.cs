@@ -66,7 +66,6 @@ public class MatchStats : MonoBehaviour {
     [SerializeField] private float spacing;
     [SerializeField] private float spacingTurns;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
-    public bool isFirstMinorArcana;
     private List<Minor> currentMinorsOnMajor;
     public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
 
