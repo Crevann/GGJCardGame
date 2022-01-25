@@ -10,6 +10,8 @@ public class SettingsScreen : MonoBehaviour
     public List<ResItem> resolutions = new List<ResItem>();
     public TMP_Text resolutionLabel;
 
+    public bool fS = true;
+    public bool vSync = false;
 
     private void Start()
     {
@@ -63,6 +65,28 @@ public class SettingsScreen : MonoBehaviour
     public void ApplyGraphics()
     {
         Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, false);
+        SetFullScreen();
+        SetVSync();
+    }
+
+    public void ToggleFullScreen()
+    {
+        fS = !fS;
+    }
+    private void SetFullScreen()
+    {
+        Screen.fullScreen = fS;
+    }
+
+    public void ToggleVSync()
+    {
+        vSync = !vSync;
+    }
+
+    private void SetVSync()
+    {
+        if (vSync) QualitySettings.vSyncCount = 1;
+        else QualitySettings.vSyncCount = 0;
     }
 }
 
