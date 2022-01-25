@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(Animator))]
 public class MatchStats : MonoBehaviour {
     public enum LevelDifficulty {
@@ -21,6 +23,7 @@ public class MatchStats : MonoBehaviour {
     public string finishedStateParam;
     public string currentTurnParam;
     public string endGameParam;
+    public Button button;
     
 
     [Header("SET MAJOR")]
@@ -65,12 +68,14 @@ public class MatchStats : MonoBehaviour {
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
     public bool isFirstMinorArcana;
     private List<Minor> currentMinorsOnMajor;
+    public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
 
     [Header("SET PROBLEMS")]
     [Range(0, 5)] public int maxProblems;
     public Transform firstProblemPos, lastProblemPos;
     public Transform problemDeckPos;
     private Problem[] currentProblems;
+    public Problem[] CurrentProblems { get { return currentProblems; } }
 
     private static MatchStats instance;
     public static MatchStats Instance {

@@ -1183,6 +1183,7 @@ MonoBehaviour:
   finishedStateParam: FinishedState
   currentTurnParam: CurrentTurn
   endGameParam: EndGame
+  button: {fileID: 772749565}
   posCard1: {fileID: 500481958}
   posCard2: {fileID: 412368002}
   posCard3: {fileID: 148346841}
@@ -1312,7 +1313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &772749564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1331,7 +1332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3163, y: -1944}
+  m_AnchoredPosition: {x: 1111.0001, y: 1900}
   m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772749565
