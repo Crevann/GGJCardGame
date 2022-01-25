@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Major : Card {
     string cardName;
+    int getMinors = 3;
     int soulCoinGain;
     int bodyIngotGain;
     int reverceSoulCoinGain, reverseBodyIngotGain;
@@ -37,9 +38,17 @@ public class Major : Card {
         get { return bodyIngotGain; }
     }
     private void OnMouseDown() {
-        if (targetPos == transform.position) {
-            MatchStats.Instance.CurrentMajorArcana = this;
+        if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 1")) {
+            if (targetPos == transform.position) {
+                MatchStats.Instance.CurrentMajorArcana = this;
+                Minor[] shownedMinors = new Minor[getMinors];
+                for (int i = 0; i < getMinors; i++) {
+                    shownedMinors[i] = MatchLogic.Instance.minorDeck.Dequeque();
+                    shownedMinors[i].InGame();
+                    shownedMinors[i].gameObject.SetActive(true);
+                    MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
+                }
+            }
         }
     }
-
 }

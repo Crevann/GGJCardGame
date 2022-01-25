@@ -15,13 +15,15 @@ public class CardDisplacement : MonoBehaviour
         Minor[] currentCards = MatchStats.Instance.CurrentMinorArcanaHand;
         int cardsInHand = MatchStats.Instance.CurrentMinorArcanaInHand();
         spacing = cardsInHand > 2 ? handSize / (cardsInHand - 1) : handSize;
+        int cardNumber = 0;
         for (int i = 0; i < currentCards.Length; i++) {
             if(currentCards[i] != null) {
                 currentCards[i].transform.SetParent(transform);
                 float cardLocalPosition = cardsInHand > 1 ?
-                    spacing * i :
+                    spacing * cardNumber :
                     handSize * 0.5f;
-                currentCards[i].transform.localPosition = new Vector2(cardLocalPosition, 0);
+                currentCards[i].MoveTo(new Vector3(transform.position.x + cardLocalPosition, transform.position.y, 0));
+                cardNumber++;
             }
         }
     }

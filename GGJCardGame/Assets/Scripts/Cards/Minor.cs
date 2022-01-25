@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Minor : Card {
+    private bool isPlayed;
     string cardName;
     int soulCoinsCost;
     int bodyIngotCost;
@@ -27,7 +28,6 @@ public class Minor : Card {
         }
     }
 
-    LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost
     {
         get { return soulCoinsCost; }
@@ -57,14 +57,13 @@ public class Minor : Card {
             if (soul > body) stabilityGain = soul;
             else stabilityGain = body;
         }
-        bloomEffect = GetComponent<LightProbeProxyVolume>();
     }
 
 
     public override void Update() {
         base.Update();
         if (CheckCostCard()) {
-            bloomEffect.enabled = true;
+
         }
         
     }
@@ -77,6 +76,7 @@ public class Minor : Card {
 
     public void PlayCard()
     {
+        isPlayed = true;
         MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
@@ -93,10 +93,13 @@ public class Minor : Card {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)&& CheckCostCard())
+        if (Input.GetMouseButtonDown(0) && CheckCostCard())
         {
-            PlayCard();
-
+            if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice")){
+                if (!isPlayed) {
+                    PlayCard();
+                }
+            }
         }
     }
 }

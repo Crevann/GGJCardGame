@@ -41,6 +41,12 @@ public class MatchLogic : MonoBehaviour
         MatchStats.Instance.currentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
     }
     public void EndTurn() {
-        //TODO Go to next FSM state
+        if(MatchStats.Instance.animator.GetInteger(MatchStats.Instance.currentTurnParam) < MatchStats.Instance.maxProblems) {
+            MatchStats.Instance.animator.SetTrigger(MatchStats.Instance.finishedStateParam);
+        }
+        else {
+            MatchStats.Instance.animator.SetTrigger(MatchStats.Instance.endGameParam);
+        }
+        
     }
 }
