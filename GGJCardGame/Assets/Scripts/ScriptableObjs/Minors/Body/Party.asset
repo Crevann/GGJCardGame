@@ -17,5 +17,5 @@ MonoBehaviour:
   bodyIngotCost: 2
   soul: 0
   body: 2
-  stabilityGain: Infinity
+  stabilityGain: -5
   cardFace: {fileID: -1302193065, guid: 6ceeabb240830584394782c5832fb463, type: 3}
