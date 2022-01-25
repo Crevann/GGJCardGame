@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Pandemic
   stabilityChange: 0
-  description: 'You can''t figure out why people around you are wearing masks, '
+  description: You can't figure out why people around you are wearing masks, but
+    your friend is coughing right now
   cardFace: {fileID: 1349628421, guid: 6ceeabb240830584394782c5832fb463, type: 3}

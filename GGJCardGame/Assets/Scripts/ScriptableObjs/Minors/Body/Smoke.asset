@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Smoke
   m_EditorClassIdentifier: 
   cardName: Smoke
-  soulCoinsCost: 0
-  bodyIngotCost: 0
-  soul: 0
-  body: 0
+  soulCoinsCost: 2
+  bodyIngotCost: 4
+  soul: 1
+  body: 3
   stabilityGain: Infinity
   cardFace: {fileID: -135417620, guid: 6ceeabb240830584394782c5832fb463, type: 3}

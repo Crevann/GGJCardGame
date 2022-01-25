@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Adopt
   soulCoinsCost: 5
   bodyIngotCost: 2
-  soul: 5
+  soul: 4
   body: 0
   stabilityGain: Infinity
   cardFace: {fileID: 81579454, guid: 6ceeabb240830584394782c5832fb463, type: 3}
