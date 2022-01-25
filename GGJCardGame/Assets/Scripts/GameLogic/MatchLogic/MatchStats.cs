@@ -61,7 +61,9 @@ public class MatchStats : MonoBehaviour {
     [SerializeField] private Minor[] currentMinorArcanaHand;
     [SerializeField] private Transform startingMinorPosition;
     [SerializeField] private float spacing;
+    [SerializeField] private float spacingTurns;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
+    public bool isFirstMinorArcana;
     private List<Minor> currentMinorsOnMajor;
 
     [Header("SET PROBLEMS")]
@@ -136,7 +138,7 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void AddCardToMajor(Minor card) {
-        card.MoveTo(new Vector3(startingMinorPosition.position.x + spacing * currentMinorsOnMajor.Count, 
+        card.MoveTo(new Vector3(startingMinorPosition.position.x + (spacing * (currentMinorsOnMajor.Count - 1)) + (spacingTurns * (animator.GetInteger(currentTurnParam) - 1)), 
             startingMinorPosition.position.y, 
             0));
         card.transform.parent = currentMajorArcana.transform;
