@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580c3c54d27bb4844bcd94985f56c81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handSize: 12
+  handSize: 9
 --- !u!1 &248702861
 GameObject:
   m_ObjectHideFlags: 0
