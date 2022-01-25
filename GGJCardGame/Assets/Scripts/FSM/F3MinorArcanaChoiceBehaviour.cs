@@ -18,7 +18,7 @@ public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
             MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
         }
     }
-
+    
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         MatchStats.Instance.button.gameObject.SetActive(false);
     }

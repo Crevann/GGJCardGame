@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4a8765b89969241aab4d0812383684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulCoins: {fileID: 0}
-  bodyIngots: {fileID: 0}
+  soulCoins: {fileID: 4185558907291744312}
+  bodyIngots: {fileID: 1723047000154837451}
 --- !u!1 &7046124763632388241
 GameObject:
   m_ObjectHideFlags: 0
