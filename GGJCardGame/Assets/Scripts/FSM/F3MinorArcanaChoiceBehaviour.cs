@@ -18,9 +18,10 @@ public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
         }
     }
     private int CurrentNOfMinorsInHand(Minor[] array) {
+        int n = 0;
         for (int i = 0; i < array.Length; i++) {
-            if (array[i] == null) return i;
+            if (array[i] != null) n++;
         }
-        return array.Length;
+        return n;
     }
 }
