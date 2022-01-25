@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LostABet
   m_EditorClassIdentifier: 
   cardName: LostABet
-  stabilityChange: 0
+  stabilityChange: 2
   description: Sometimes you have to take some risks, tish time you risked to much
   cardFace: {fileID: 223122563, guid: 6ceeabb240830584394782c5832fb463, type: 3}

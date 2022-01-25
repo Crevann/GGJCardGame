@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Party
   m_EditorClassIdentifier: 
   cardName: Party
-  soulCoinsCost: 0
-  bodyIngotCost: 0
+  soulCoinsCost: 2
+  bodyIngotCost: 2
   soul: 0
-  body: 0
-  stabilityGain: Infinity
+  body: 2
+  stabilityGain: -5
   cardFace: {fileID: -1302193065, guid: 6ceeabb240830584394782c5832fb463, type: 3}

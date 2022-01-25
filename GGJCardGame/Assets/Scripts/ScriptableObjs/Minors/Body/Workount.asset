@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Workount
   m_EditorClassIdentifier: 
   cardName: Workout
-  soulCoinsCost: 0
-  bodyIngotCost: 0
-  soul: 0
-  body: 0
-  stabilityGain: Infinity
+  soulCoinsCost: 1
+  bodyIngotCost: 5
+  soul: 1
+  body: 4
+  stabilityGain: 5
   cardFace: {fileID: 1794727575, guid: 6ceeabb240830584394782c5832fb463, type: 3}

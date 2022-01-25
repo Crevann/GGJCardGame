@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Caio
   m_EditorClassIdentifier: 
   cardName: Caio
-  soulCoinsCost: 0
-  bodyIngotCost: 0
+  soulCoinsCost: 1
+  bodyIngotCost: 1
   soul: 0
   body: 0
   stabilityGain: Infinity

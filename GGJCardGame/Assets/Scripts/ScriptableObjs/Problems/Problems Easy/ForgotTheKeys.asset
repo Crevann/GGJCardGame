@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ForgotTheKeys
   m_EditorClassIdentifier: 
   cardName: ForgotTheKeys
-  stabilityChange: 0
+  stabilityChange: -2
   description: 'In your hurry, you forgot to pick up your keys and now you have to
     go back and retrieve them '
   cardFace: {fileID: -1186396159, guid: 6ceeabb240830584394782c5832fb463, type: 3}

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Reorganize
   m_EditorClassIdentifier: 
   cardName: Reorganize
-  soulCoinsCost: 0
-  bodyIngotCost: 0
+  soulCoinsCost: 4
+  bodyIngotCost: 4
   soul: 0
   body: 0
-  stabilityGain: Infinity
+  stabilityGain: -5
   cardFace: {fileID: -89714730, guid: 6ceeabb240830584394782c5832fb463, type: 3}

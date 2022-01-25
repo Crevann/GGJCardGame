@@ -1,42 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
 {
     [SerializeField] int minorsNShown = 3;
+    private Animator animator;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        
+        MatchStats.Instance.button.gameObject.SetActive(true);
         Minor[] shownedMinors = new Minor[minorsNShown];
-        for (int i = 0; i < minorsNShown; i++) {
+        for (int i = MatchStats.Instance.CurrentMinorArcanaInHand(); i < minorsNShown; i++) {
             shownedMinors[i] = MatchLogic.Instance.minorDeck.Dequeque();
             shownedMinors[i].InGame();
+            shownedMinors[i].gameObject.SetActive(true);
             MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
         }
+        CardDisplacement.Instance.DisplayCards();
     }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        MatchStats.Instance.button.gameObject.SetActive(false);
+        CardDisplacement.Instance.DisplayCards();
+    }
 }

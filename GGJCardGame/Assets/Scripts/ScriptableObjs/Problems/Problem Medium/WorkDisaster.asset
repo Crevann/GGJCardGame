@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WorkDisaster
   m_EditorClassIdentifier: 
   cardName: Work Disaster
-  stabilityChange: 0
+  stabilityChange: -5
   description: Your boss is furious with you, because of that accident you caused,
     now you risk of  being fired.
   cardFace: {fileID: 1797761452, guid: 6ceeabb240830584394782c5832fb463, type: 3}

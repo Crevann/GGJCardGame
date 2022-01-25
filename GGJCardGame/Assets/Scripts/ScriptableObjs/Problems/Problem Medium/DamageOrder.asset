@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DamageOrder
   m_EditorClassIdentifier: 
   cardName: Damaged Order
-  stabilityChange: 0
+  stabilityChange: -4
   description: As you sit down and unwind your mother in law informs you that your
     package is damaged. Not knowing whether it was broken by her or the deliveryman,
     you settle on hating both.

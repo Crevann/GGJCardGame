@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Creature
   m_EditorClassIdentifier: 
   cardName: Creature
-  soulCoinsCost: 0
-  bodyIngotCost: 0
+  soulCoinsCost: 2
+  bodyIngotCost: 2
   soul: 0
   body: 0
   stabilityGain: Infinity

@@ -18,3 +18,29 @@ MonoBehaviour:
   cardFace: {fileID: -1922632332, guid: 6ceeabb240830584394782c5832fb463, type: 3}
   reverceSoulCoinGain: 2
   reverseBodyIngotGain: 1
+  descriptionArray:
+  - A workout that helps you understand your goals
+  - Going to a party with friends clears your mind
+  - Eating grows healthy and strong
+  - Smoking relaxes you but don't forgetting your goals
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  flippedDescriptionArray:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Minor : Card {
+    private bool isPlayed;
     string cardName;
     int soulCoinsCost;
     int bodyIngotCost;
@@ -17,16 +18,18 @@ public class Minor : Card {
     public ScriptableMinor minorData {
         set {
             cardName = value.cardName;
+            name = value.cardName + "(Minor)";
             soulCoinsCost = value.soulCoinsCost;
             bodyIngotCost = value.bodyIngotCost;
             soul = value.soul == 0 ? soulCoinsCost : value.soul;
             body = value.body == 0 ? bodyIngotCost : value.body;
+            WritePrices writePrices = GetComponent<WritePrices>();
+            if (writePrices) writePrices.Write(soulCoinsCost, bodyIngotCost);
             stabilityGain = value.stabilityGain != Mathf.Infinity ? value.stabilityGain : (soulCoinsCost >= bodyIngotCost ? soulCoinsCost : bodyIngotCost);
             cardFace = value.cardFace;
         }
     }
 
-    LightProbeProxyVolume bloomEffect;
     public int SoulCoinsCost
     {
         get { return soulCoinsCost; }
@@ -50,20 +53,21 @@ public class Minor : Card {
     }
 
     
-    public void Start() {
+    public override void Start() {
+        base.Start();
         if (stabilityGain == Mathf.Infinity) {
             if (soul > body) stabilityGain = soul;
             else stabilityGain = body;
         }
-        bloomEffect = GetComponent<LightProbeProxyVolume>();
     }
 
-    void Update()
-    {
-        if (CheckCostCard())
-        {
-            bloomEffect.enabled= true;
+
+    public override void Update() {
+        base.Update();
+        if (CheckCostCard()) {
+
         }
+        
     }
 
 
@@ -74,9 +78,11 @@ public class Minor : Card {
 
     public void PlayCard()
     {
+        isPlayed = true;
         MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
+        CardDisplacement.Instance.DisplayCards();
     }
 
     public bool CheckCostCard()
@@ -90,10 +96,12 @@ public class Minor : Card {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)&& CheckCostCard())
+        if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice") && 
+            Input.GetMouseButtonDown(0) && CheckCostCard())
         {
-            PlayCard();
-
+            if (!isPlayed) {
+                PlayCard();
+            }
         }
     }
 }

@@ -6,32 +6,9 @@ public class F3GainBehaviour : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.currentMajorArcana.BodyIngotGain;
-        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.currentMajorArcana.SoulCoinGain;
+        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.CurrentMajorArcana.BodyIngotGain;
+        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
+        animator.SetTrigger(MatchStats.Instance.finishedStateParam);
         //TODO animation
     }
-
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

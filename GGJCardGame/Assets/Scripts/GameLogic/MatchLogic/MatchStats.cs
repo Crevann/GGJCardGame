@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Animator))]
 public class MatchStats : MonoBehaviour {
     public enum LevelDifficulty {
         easy,
@@ -9,24 +11,71 @@ public class MatchStats : MonoBehaviour {
         hard
     }
 
-    [SerializeField] private int maxProblems;
+    
     public int currentStability;
-    public int currentSoulCoins;
-    public int currentBodyIngots;
+    public int currentSoulCoins = 0;
+    public int currentBodyIngots = 0;
     private LevelDifficulty difficulty;
-    public Major currentMajorArcana;
+
+    [Header("ANIMATOR")]
+    public Animator animator;
+    public string choseMajorParam;
+    public string finishedStateParam;
+    public string currentTurnParam;
+    public string endGameParam;
+    public Button button;
+    
+
     [Header("SET MAJOR")]
+    [SerializeField] Transform posCard1;
+    [SerializeField] Transform posCard2, posCard3, majorArcanaPosition;
+    Major currentMajorArcana;
+    public Transform majorDeckPos;
     private Major[] shownMajorF1;
-    [HideInInspector] public Major[] ShownMajorF1 {
+    public Major CurrentMajorArcana {
+        set {
+            currentMajorArcana = value;
+            for (int i = 0; i < shownMajorF1.Length; i++) {
+                if (currentMajorArcana == shownMajorF1[i]) shownMajorF1[i].MoveTo(majorArcanaPosition.position);
+                else shownMajorF1[i].MoveTo(majorDeckPos.position, true);
+            }
+            if (animator) animator.SetTrigger(choseMajorParam);
+        }
+        get { return currentMajorArcana; }
+    }
+    
+
+    [HideInInspector]
+    public Major[] ShownMajorF1 {
         set {
             shownMajorF1 = value;
-            shownMajorF1[0].transform.position = Vector3.zero;
+            shownMajorF1[0].MoveTo(posCard1.position);
+            shownMajorF1[1].MoveTo(posCard2.position);
+            shownMajorF1[2].MoveTo(posCard3.position);
+            //shownMajorF1[0].transform.position = posCard1.position;
+            //shownMajorF1[1].transform.position = posCard2.position;
+            //shownMajorF1[2].transform.position = posCard3.position;
+            //shownMajorF1[0].gameObject.SetActive(true);
+            //shownMajorF1[1].gameObject.SetActive(true);
+            //shownMajorF1[2].gameObject.SetActive(true);
         }
     }
+    [Header("SET MINOR")]
     [SerializeField] private Minor[] currentMinorArcanaHand;
+    [SerializeField] private Transform startingMinorPosition;
+    [SerializeField] private float spacing;
+    [SerializeField] private float spacingTurns;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
+    public bool isFirstMinorArcana;
     private List<Minor> currentMinorsOnMajor;
+    public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
+
+    [Header("SET PROBLEMS")]
+    [Range(0, 5)] public int maxProblems;
+    public Transform firstProblemPos, lastProblemPos;
+    public Transform problemDeckPos;
     private Problem[] currentProblems;
+    public Problem[] CurrentProblems { get { return currentProblems; } }
 
     private static MatchStats instance;
     public static MatchStats Instance {
@@ -81,12 +130,12 @@ public class MatchStats : MonoBehaviour {
 
     public void EmptyProblems() {
         for (int i = 0; i < currentProblems.Length; i++) {
-            currentProblems[i] = null;//TODO
+            currentProblems[i] = null; //TODO
         }
     }
 
     public void EmptyCardsOnMajor() {
-        currentMinorsOnMajor.Clear();//TODO
+        currentMinorsOnMajor.Clear(); //TODO
     }
 
     public void SetMajorArcana(Major card) {
@@ -94,12 +143,17 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void AddCardToMajor(Minor card) {
+        card.MoveTo(new Vector3(startingMinorPosition.position.x + (spacing * (currentMinorsOnMajor.Count - 1)) + (spacingTurns * (animator.GetInteger(currentTurnParam) - 1)), 
+            startingMinorPosition.position.y, 
+            0));
+        card.transform.parent = currentMajorArcana.transform;
+        RemoveMinorArcanaFromHand(card);
         currentMinorsOnMajor.Add(card);
-    } 
+    }
 
     public bool AddMinorCardToHand(Minor card) {
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
-            if(currentMinorArcanaHand[i] == null) {
+            if (currentMinorArcanaHand[i] == null) {
                 currentMinorArcanaHand[i] = card;
                 return true;
             }
@@ -107,22 +161,34 @@ public class MatchStats : MonoBehaviour {
         return false;
     }
 
-    public bool AddProblem(Problem card) {
+    public int AddProblem(Problem card) {
         for (int i = 0; i < currentProblems.Length; i++) {
             if (currentProblems[i] == null) {
                 currentProblems[i] = card;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public int CurrentMinorArcanaInHand() {
-        for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
-            if(currentMinorArcanaHand[i] == null) {
                 return i;
             }
         }
-        return currentMinorArcanaHand.Length;
+        return -1;
+    }
+
+    public int CurrentMinorArcanaInHand() {
+        int minorNum = 0;
+        for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
+            if (currentMinorArcanaHand[i] != null) {
+                minorNum++;
+            }
+        }
+        return minorNum;
+    }
+
+    public Minor RemoveMinorArcanaFromHand(Minor card) {
+        for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
+            if (currentMinorArcanaHand[i] == card) {
+                Minor retMinor = currentMinorArcanaHand[i];
+                currentMinorArcanaHand[i] = null;
+                return retMinor;
+            }
+        }
+        return null;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NoTimeLotOfWork
   m_EditorClassIdentifier: 
   cardName: No Time, Lots of work
-  stabilityChange: 0
+  stabilityChange: 5
   description: You dragged feet while working on your assignment, as you stare at
     the amount of work left is slowly realize just how long a night this will be.
   cardFace: {fileID: -1524534687, guid: 6ceeabb240830584394782c5832fb463, type: 3}
