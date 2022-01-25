@@ -46,7 +46,7 @@ public class Major : Card {
                     shownedMinors[i] = MatchLogic.Instance.minorDeck.Dequeque();
                     shownedMinors[i].InGame();
                     shownedMinors[i].gameObject.SetActive(true);
-                    MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
+                    //MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
                 }
             }
         }

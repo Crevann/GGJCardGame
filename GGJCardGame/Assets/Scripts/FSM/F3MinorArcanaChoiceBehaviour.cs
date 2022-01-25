@@ -10,11 +10,17 @@ public class F3MinorArcanaChoiceBehaviour : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         Minor[] shownedMinors = new Minor[minorsNShown];
-        for (int i = 0; i < minorsNShown; i++) {
+        for (int i = CurrentNOfMinorsInHand(MatchStats.Instance.CurrentMinorArcanaHand); i < minorsNShown; i++) {
             shownedMinors[i] = MatchLogic.Instance.minorDeck.Dequeque();
             shownedMinors[i].InGame();
             shownedMinors[i].gameObject.SetActive(true);
             MatchStats.Instance.AddMinorCardToHand(shownedMinors[i]);
         }
+    }
+    private int CurrentNOfMinorsInHand(Minor[] array) {
+        for (int i = 0; i < array.Length; i++) {
+            if (array[i] == null) return i;
+        }
+        return array.Length;
     }
 }
