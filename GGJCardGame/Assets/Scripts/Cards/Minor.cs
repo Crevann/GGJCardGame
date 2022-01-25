@@ -82,6 +82,7 @@ public class Minor : Card {
         MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
+        CardDisplacement.Instance.DisplayCards();
     }
 
     public bool CheckCostCard()

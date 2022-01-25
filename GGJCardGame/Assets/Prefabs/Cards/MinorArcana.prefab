@@ -214,8 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBack: {fileID: -1740283951, guid: 6ceeabb240830584394782c5832fb463, type: 3}
   movementSpeed: 3
-  minRot: {x: 0, y: 0, z: 0, w: 0}
-  maxRot: {x: 0, y: 0, z: 0, w: 0}
+  minRot: {x: 0, y: 0, z: 0.17364818, w: 0.9848077}
+  maxRot: {x: 0, y: 0, z: -0.17364818, w: 0.9848077}
   stabilityGain: Infinity
 --- !u!61 &4530926476751122852
 BoxCollider2D:

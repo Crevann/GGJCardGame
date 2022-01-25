@@ -15,7 +15,7 @@ public abstract class Card : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        targetPos = transform.position;
+        if(targetPos == Vector3.zero) targetPos = transform.position;
         targetRot = transform.rotation;
         anim = GetComponent<Animator>();
     }
@@ -23,7 +23,7 @@ public abstract class Card : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (targetPos != transform.position) {
+        if ((targetPos - transform.position).sqrMagnitude > 0.5f) {
             transform.position = Vector3.Lerp(transform.position, targetPos, movementSpeed * Time.deltaTime);
             if (targetRot != transform.rotation) 
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, movementSpeed * Time.deltaTime);

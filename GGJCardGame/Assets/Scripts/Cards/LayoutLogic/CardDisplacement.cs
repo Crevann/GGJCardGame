@@ -6,12 +6,18 @@ public class CardDisplacement : MonoBehaviour
 {
     private float spacing;
     [SerializeField] private float handSize;
-    void Update()
-    {
-        DisplayCards();
+    private static CardDisplacement instance;
+    public static CardDisplacement Instance {
+        get {
+            return instance;
+        }
     }
-
-    private void DisplayCards() {
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        }
+    }
+    public void DisplayCards() { //TODO ridurre il numero di variabili a 3
         Minor[] currentCards = MatchStats.Instance.CurrentMinorArcanaHand;
         int cardsInHand = MatchStats.Instance.CurrentMinorArcanaInHand();
         spacing = cardsInHand > 2 ? handSize / (cardsInHand - 1) : handSize;
@@ -22,7 +28,8 @@ public class CardDisplacement : MonoBehaviour
                 float cardLocalPosition = cardsInHand > 1 ?
                     spacing * cardNumber :
                     handSize * 0.5f;
-                currentCards[i].MoveTo(new Vector3(transform.position.x + cardLocalPosition, transform.position.y, 0));
+                Vector3 targetPos = new Vector3(transform.position.x + cardLocalPosition, transform.position.y, 0);
+                currentCards[i].MoveTo(targetPos, false, (targetPos - currentCards[i].transform.position).sqrMagnitude > 0.2f);
                 cardNumber++;
             }
         }
