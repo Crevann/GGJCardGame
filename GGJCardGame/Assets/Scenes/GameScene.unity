@@ -524,7 +524,7 @@ MonoBehaviour:
   maxSoulCoin: 0
   maxBodyIngots: 0
   maxCardHard: 3
-  stabilityRange: 100
+  stabilityRange: 5
 --- !u!1 &412368001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,6 @@ MonoBehaviour:
   startingMinorPosition: {fileID: 437203503}
   spacing: 0.5
   spacingTurns: 4
-  isFirstMinorArcana: 0
   maxProblems: 3
   firstProblemPos: {fileID: 2027324665}
   lastProblemPos: {fileID: 549454715}
