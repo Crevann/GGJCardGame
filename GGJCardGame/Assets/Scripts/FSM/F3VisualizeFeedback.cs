@@ -6,7 +6,12 @@ public class F3VisualizeFeedback : StateMachineBehaviour
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         CalculateStability();
-        animator.SetTrigger(MatchStats.Instance.finishedStateParam);
+        if(animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.maxProblems) {
+            animator.SetTrigger(MatchStats.Instance.endGameParam);
+        }
+        else {
+            animator.SetTrigger(MatchStats.Instance.finishedStateParam);
+        }
     }
 
     private void ShowFeedback(string feedback) {

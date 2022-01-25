@@ -1193,7 +1193,7 @@ MonoBehaviour:
   startingMinorPosition: {fileID: 437203503}
   spacing: 0.5
   spacingTurns: 4
-  isFirstMinorArcana: 1
+  isFirstMinorArcana: 0
   maxProblems: 3
   firstProblemPos: {fileID: 2027324665}
   lastProblemPos: {fileID: 549454715}

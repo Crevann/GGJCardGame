@@ -110,7 +110,7 @@ public class MatchStats : MonoBehaviour {
     public void EmptyHands() {
         currentMajorArcana = null;
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
-            currentMinorArcanaHand[i] = null; //TODO non deve andare a null ma rimettere le carte non usate nel mazzo originale
+            currentMinorArcanaHand[i] = null;
         }
     }
     public int GetProblemsStability() {
