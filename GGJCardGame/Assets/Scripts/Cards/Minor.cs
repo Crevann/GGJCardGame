@@ -23,6 +23,8 @@ public class Minor : Card {
             bodyIngotCost = value.bodyIngotCost;
             soul = value.soul == 0 ? soulCoinsCost : value.soul;
             body = value.body == 0 ? bodyIngotCost : value.body;
+            WritePrices writePrices = GetComponent<WritePrices>();
+            if (writePrices) writePrices.Write(soulCoinsCost, bodyIngotCost);
             stabilityGain = value.stabilityGain != Mathf.Infinity ? value.stabilityGain : (soulCoinsCost >= bodyIngotCost ? soulCoinsCost : bodyIngotCost);
             cardFace = value.cardFace;
         }
