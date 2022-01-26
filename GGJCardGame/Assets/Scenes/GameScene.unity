@@ -1183,6 +1183,7 @@ MonoBehaviour:
   choseMajorParam: ChoseMajor
   finishedStateParam: FinishedState
   currentTurnParam: CurrentTurn
+  currentMatchParam: CurrentMatch
   endGameParam: EndGame
   button: {fileID: 772749565}
   posCard1: {fileID: 500481958}
