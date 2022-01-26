@@ -11,18 +11,6 @@ public class FlipCardLogic : MonoBehaviour
     [SerializeField] FlipCard[] cards = new FlipCard[3];
     [SerializeField] FlipCardLogic nextDigit = null;
 
-    private static FlipCardLogic instance;
-    public static FlipCardLogic Instance {
-        get {
-            return instance;
-        }
-    }
-
-    private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
-    }
     void Start()
     {
         oldNumberToReach = numberToReach;
