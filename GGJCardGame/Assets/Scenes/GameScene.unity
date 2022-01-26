@@ -860,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248930142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4759026, y: 3.7897742, z: 8.400851}
+  m_LocalPosition: {x: -4.523, y: 4.617, z: 8.400851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1854,7 +1854,7 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: -60, y: 90, z: 0}
+    m_Rotation: {x: -65.8, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -6218,7 +6218,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6861,7 +6861,7 @@ RectTransform:
   m_Children:
   - {fileID: 642133500}
   m_Father: {fileID: 1608814814}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7032,6 +7032,10 @@ PrefabInstance:
     - target: {fileID: 2954967463054362427, guid: bedd74dc95c067447a470ab3f0e416b1, type: 3}
       propertyPath: m_Name
       value: FlipCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954967463054362427, guid: bedd74dc95c067447a470ab3f0e416b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5898553809076280258, guid: bedd74dc95c067447a470ab3f0e416b1, type: 3}
       propertyPath: m_RootOrder
@@ -8040,7 +8044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547123354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5559027, y: 3.7897742, z: 8.400851}
+  m_LocalPosition: {x: -2.088, y: 4.624, z: 8.400851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8089,9 +8093,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 772749564}
   - {fileID: 1538665384}
   - {fileID: 2031429707}
+  - {fileID: 772749564}
   m_Father: {fileID: 985775257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8533,7 +8537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959108096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.97, y: 3.95, z: 0.06110635}
+  m_LocalPosition: {x: -6.97, y: 3.68, z: 0.06110635}
   m_LocalScale: {x: 3, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9462,7 +9466,7 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: -70, y: 90, z: 0}
+    m_Rotation: {x: -79.9, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -13728,7 +13732,7 @@ RectTransform:
   - {fileID: 849447510}
   - {fileID: 318657558}
   m_Father: {fileID: 1608814814}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13881,7 +13885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 985551138830556061, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 985551138830556061, guid: 3d74a8ab3ba2c2b47bed6b84decc85a0, type: 3}
       propertyPath: m_AnchorMax.x
