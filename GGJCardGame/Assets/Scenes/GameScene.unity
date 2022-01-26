@@ -7033,6 +7033,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlipCard
       objectReference: {fileID: 0}
+    - target: {fileID: 2954967463054362427, guid: bedd74dc95c067447a470ab3f0e416b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5898553809076280258, guid: bedd74dc95c067447a470ab3f0e416b1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -13732,7 +13736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1625, y: 1881}
+  m_AnchoredPosition: {x: -1908, y: 1884}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2038556421
