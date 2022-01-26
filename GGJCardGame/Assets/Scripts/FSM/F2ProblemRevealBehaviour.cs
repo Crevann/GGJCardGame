@@ -10,7 +10,8 @@ public class F2ProblemRevealBehaviour : StateMachineBehaviour
         animator.SetInteger(MatchStats.Instance.currentTurnParam, animator.GetInteger(MatchStats.Instance.currentTurnParam) + 1);
         MatchLogic.Instance.problemsDeck.Shuffle(); //Shuffle Problems deck
         Problem problemShown = MatchLogic.Instance.problemsDeck.Dequeque();
-        
+        problemShown.gameObject.SetActive(true);
+
         int i = MatchStats.Instance.AddProblem(problemShown);
         problemShown.MoveTo(Vector3.Lerp(MatchStats.Instance.firstProblemPos.position, MatchStats.Instance.lastProblemPos.position, (float)i / MatchStats.Instance.maxProblems), false, true);
         animator.SetTrigger(MatchStats.Instance.finishedStateParam);

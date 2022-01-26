@@ -13,7 +13,7 @@ public class ProblemsDeck : Deck<Problem>
             deck[i].transform.position = MatchStats.Instance.problemDeckPos.position;
             deck[i].problemsData = problemsToCreate[i];
             deck[i].transform.position = transform.position;
-            //deck[i].gameObject.SetActive(false);
+            deck[i].gameObject.SetActive(false);
         }
         base.Start();
     }
