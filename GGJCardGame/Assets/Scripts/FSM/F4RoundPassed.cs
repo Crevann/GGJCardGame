@@ -12,6 +12,12 @@ public class F4RoundPassed : StateMachineBehaviour
     {
         CalculateBodySoulLevel();
         clockHand.Rotate();
+        if(animator.GetInteger(MatchStats.Instance.currentMatchParam) >= GameLogic.Instance.maxMatches) {
+            animator.SetTrigger(MatchStats.Instance.endGameParam);
+        }
+        else {
+            animator.SetTrigger(MatchStats.Instance.finishedStateParam);
+        }
     }
 
     private void CalculateBodySoulLevel() {

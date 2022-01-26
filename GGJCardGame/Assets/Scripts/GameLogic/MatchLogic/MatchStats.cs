@@ -22,6 +22,7 @@ public class MatchStats : MonoBehaviour {
     public string choseMajorParam;
     public string finishedStateParam;
     public string currentTurnParam;
+    public string currentMatchParam;
     public string endGameParam;
     public Button button;
     
@@ -96,6 +97,9 @@ public class MatchStats : MonoBehaviour {
     public void StartMatch(LevelDifficulty levelDifficulty) {
         difficulty = levelDifficulty;
         ResetStats();
+        MatchLogic.Instance.majorDeck.RestoreOriginalDeck();
+        MatchLogic.Instance.minorDeck.RestoreOriginalDeck();
+        MatchLogic.Instance.problemsDeck.RestoreOriginalDeck();
     }
 
     public void ResetStats() {
@@ -107,8 +111,12 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void EmptyHands() {
+        currentMajorArcana.MoveTo(majorDeckPos.position);
+        currentMajorArcana.gameObject.SetActive(false);
         currentMajorArcana = null;
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
+            currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.minorDeck.transform;
+            currentMinorArcanaHand[i].gameObject.SetActive(false);
             currentMinorArcanaHand[i] = null;
         }
     }
@@ -129,12 +137,18 @@ public class MatchStats : MonoBehaviour {
 
     public void EmptyProblems() {
         for (int i = 0; i < currentProblems.Length; i++) {
-            currentProblems[i] = null; //TODO
+            currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.problemsDeck.transform;
+            currentMinorArcanaHand[i].gameObject.SetActive(false);
+            currentProblems[i] = null;
         }
     }
 
     public void EmptyCardsOnMajor() {
-        currentMinorsOnMajor.Clear(); //TODO
+        foreach (Minor minor in currentMinorsOnMajor) {
+            minor.transform.parent = MatchLogic.Instance.minorDeck.transform;
+            minor.gameObject.SetActive(false);
+        }
+        currentMinorsOnMajor.Clear();
     }
 
     public void SetMajorArcana(Major card) {
