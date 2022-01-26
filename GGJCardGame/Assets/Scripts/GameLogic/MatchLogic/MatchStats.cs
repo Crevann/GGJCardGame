@@ -16,9 +16,15 @@ public class MatchStats : MonoBehaviour {
     [SerializeField] FlipCardLogic soulCointIndicator;
     [SerializeField] FlipCardLogic bodyIngotIndicator;
     [SerializeField] private int currentSoulCoins = 0;
+    [SerializeField] ParticleSystem particleSoulCoin;
+    [SerializeField] ParticleSystem particleBodyIngot;
     public int CurrentSoulCoins {
         get { return currentSoulCoins; }
         set {
+            int particlesToSpawn= value - CurrentSoulCoins;
+            var main = particleSoulCoin.main;
+            main.maxParticles = particlesToSpawn > 0 ? particlesToSpawn : 0;
+            particleSoulCoin.Play();
             currentSoulCoins = value;
             soulCointIndicator.ChangeDigit(currentSoulCoins);
         }
@@ -27,6 +33,10 @@ public class MatchStats : MonoBehaviour {
     public int CurrentBodyIngots {
         get { return currentBodyIngots; }
         set {
+            int particlesToSpawn = value - currentBodyIngots;
+            var main = particleBodyIngot.main;
+            main.maxParticles = particlesToSpawn > 0 ? particlesToSpawn : 0;
+            particleBodyIngot.Play();
             currentBodyIngots = value;
             bodyIngotIndicator.ChangeDigit(currentBodyIngots);
         }
