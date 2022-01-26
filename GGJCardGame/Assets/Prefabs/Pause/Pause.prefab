@@ -1700,6 +1700,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 171
       objectReference: {fileID: 0}
+    - target: {fileID: 1212087049486858622, guid: 5cb1077b1959fbe4989c6387c40e5851, type: 3}
+      propertyPath: m_text
+      value: ' '
+      objectReference: {fileID: 0}
     - target: {fileID: 7879334756763632825, guid: 5cb1077b1959fbe4989c6387c40e5851, type: 3}
       propertyPath: m_Name
       value: SettingsGameObject

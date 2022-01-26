@@ -6,6 +6,7 @@ public class PausePagesManager : MonoBehaviour
 {
     [SerializeField]
     private List<PausePageAnimations> pages;
+    
     private int activePage;
     private int previousPage;
 
