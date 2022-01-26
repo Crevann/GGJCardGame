@@ -43,6 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Card
+    uniqueID: 3208461105
+    locked: 0
+  - name: Deck
+    uniqueID: 3201055549
+    locked: 0
+  - name: DescriptionPage
+    uniqueID: 310941951
+    locked: 0
+  - name: Counter
+    uniqueID: 1274121917
+    locked: 0
   - name: UI
     uniqueID: 796584801
+    locked: 0
+  - name: Particles
+    uniqueID: 4024076881
     locked: 0

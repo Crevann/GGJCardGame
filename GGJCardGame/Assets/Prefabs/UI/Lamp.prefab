@@ -284,11 +284,12 @@ MonoBehaviour:
   lampIntensity: 0.2
   lampTurnSpeed: 5
   lightFlicker: 0.01
-  flickerTime: 5
   lampString: {fileID: 5865522446152429626}
   lampLight: {fileID: 860029306869915594}
   lampStringOnGlowColor: {r: 1024, g: 1024, b: 1024, a: 0}
   lampStringOffGlowColor: {r: 0, g: 0, b: 0, a: 0}
+  currentFlickerTime: 0
+  flickerTime: 5
   isOn: 0
 --- !u!1 &6211647754925385416
 GameObject:
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_Intensity: 0
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 1
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000313b3dbf3d3bccbeff988812bd8ef14b61eb7a2f518adaef
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
