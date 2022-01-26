@@ -79,15 +79,15 @@ public class Minor : Card {
     public void PlayCard()
     {
         isPlayed = true;
-        MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
-        MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
+        MatchStats.Instance.CurrentBodyIngots -= bodyIngotCost;
+        MatchStats.Instance.CurrentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
         CardDisplacement.Instance.DisplayCards();
     }
 
     public bool CheckCostCard()
     {
-        return MatchStats.Instance.currentBodyIngots >= bodyIngotCost && MatchStats.Instance.currentSoulCoins >= soulCoinsCost;
+        return MatchStats.Instance.CurrentBodyIngots >= bodyIngotCost && MatchStats.Instance.CurrentSoulCoins >= soulCoinsCost;
         
     }
 
