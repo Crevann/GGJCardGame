@@ -9,6 +9,7 @@ public class Major : Card {
     int bodyIngotGain;
     int reverceSoulCoinGain, reverseBodyIngotGain;
     string[] descriptionArray, flippedDescriptionArray;
+    private ParticleSystem mySystemP;
     [HideInInspector] public bool reverce;
     
     
@@ -61,5 +62,12 @@ public class Major : Card {
                 MatchStats.Instance.CurrentMajorArcana = this;
             }
         }
+    }
+
+    public void SpawnParticles(int nparticles)
+    {
+
+
+
     }
 }
