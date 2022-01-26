@@ -6716,6 +6716,7 @@ MonoBehaviour:
   firstProblemPos: {fileID: 2027324665}
   lastProblemPos: {fileID: 549454715}
   problemDeckPos: {fileID: 1895567464}
+  currentProblems: []
 --- !u!114 &727351215
 MonoBehaviour:
   m_ObjectHideFlags: 0
