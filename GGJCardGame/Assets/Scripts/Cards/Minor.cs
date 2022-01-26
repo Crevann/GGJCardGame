@@ -79,15 +79,15 @@ public class Minor : Card {
     public void PlayCard()
     {
         isPlayed = true;
-        MatchStats.Instance.currentBodyIngots -= bodyIngotCost;
-        MatchStats.Instance.currentSoulCoins -= soulCoinsCost;
+        MatchStats.Instance.CurrentBodyIngots -= bodyIngotCost;
+        MatchStats.Instance.CurrentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
         CardDisplacement.Instance.DisplayCards();
     }
 
     public bool CheckCostCard()
     {
-        return MatchStats.Instance.currentBodyIngots >= bodyIngotCost && MatchStats.Instance.currentSoulCoins >= soulCoinsCost;
+        return MatchStats.Instance.CurrentBodyIngots >= bodyIngotCost && MatchStats.Instance.CurrentSoulCoins >= soulCoinsCost;
         
     }
 
@@ -97,7 +97,7 @@ public class Minor : Card {
     private void OnMouseOver()
     {
         if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice") && 
-            Input.GetMouseButtonDown(0) && CheckCostCard())
+            Input.GetMouseButtonDown(0) && CheckCostCard() && !MatchStats.Instance.IsPaused)
         {
             if (!isPlayed) {
                 PlayCard();

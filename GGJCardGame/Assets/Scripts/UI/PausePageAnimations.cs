@@ -54,6 +54,7 @@ public class PausePageAnimations : MonoBehaviour
         SwitchState(pageState.idle);
     }
 
+
     public void SwitchState(pageState _state)
     {
         state = _state;
@@ -81,13 +82,11 @@ public class PausePageAnimations : MonoBehaviour
         if (State == pageState.active)
         {
             State = pageState.idle;
-            Debug.LogFormat("{0} deselected", gameObject.name);
         }
 
         else if (State == pageState.idle)
         {
-            State = pageState.active;
-            Debug.LogFormat("{0} selected", gameObject.name);
+            State = pageState.active;   
         }
         
     }

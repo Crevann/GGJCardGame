@@ -61,6 +61,7 @@ public class PauseLogic : MonoBehaviour
     {
         pausePanel.gameObject.SetActive(true);
         isPaused = true;
+        MatchStats.Instance.IsPaused = true;
     }
 
     public void ExitGame()
@@ -75,5 +76,6 @@ public class PauseLogic : MonoBehaviour
     {
         pausePanel.gameObject.SetActive(false);
         isPaused = false;
+        MatchStats.Instance.IsPaused = false;
     }
 }

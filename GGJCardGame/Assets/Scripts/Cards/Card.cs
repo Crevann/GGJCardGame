@@ -9,7 +9,7 @@ public abstract class Card : MonoBehaviour
     [SerializeField] float movementSpeed = 3;
     [SerializeField] Quaternion minRot, maxRot;
     protected Quaternion targetRot;
-    protected Vector3 targetPos;
+    protected Vector3 targetPos = Vector3.zero;
     protected bool thenDisable;
 
     // Start is called before the first frame update

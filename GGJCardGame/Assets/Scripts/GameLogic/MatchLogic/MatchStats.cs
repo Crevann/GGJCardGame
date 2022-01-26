@@ -13,9 +13,32 @@ public class MatchStats : MonoBehaviour {
 
     
     public int currentStability;
-    public int currentSoulCoins = 0;
-    public int currentBodyIngots = 0;
+    [SerializeField] FlipCardLogic soulCointIndicator;
+    [SerializeField] FlipCardLogic bodyIngotIndicator;
+    [SerializeField] private int currentSoulCoins = 0;
+    public int CurrentSoulCoins {
+        get { return currentSoulCoins; }
+        set {
+            currentSoulCoins = value;
+            soulCointIndicator.ChangeDigit(currentSoulCoins);
+        }
+    }
+    [SerializeField] public int currentBodyIngots = 0;
+    public int CurrentBodyIngots {
+        get { return currentBodyIngots; }
+        set {
+            currentBodyIngots = value;
+            bodyIngotIndicator.ChangeDigit(currentBodyIngots);
+        }
+    }
     private LevelDifficulty difficulty;
+    private bool isPaused = false;
+
+    public bool IsPaused
+    {
+        get { return isPaused; }
+        set { isPaused = value; }
+    }
 
     [Header("ANIMATOR")]
     public Animator animator;
@@ -103,8 +126,8 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void ResetStats() {
-        currentSoulCoins = 0;
-        currentBodyIngots = 0;
+        CurrentSoulCoins = 0;
+        CurrentBodyIngots = 0;
         currentStability = 0;
         EmptyHands();
         EmptyCardsOnMajor();

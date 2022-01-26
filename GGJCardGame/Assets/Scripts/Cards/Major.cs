@@ -9,6 +9,7 @@ public class Major : Card {
     int bodyIngotGain;
     int reverceSoulCoinGain, reverseBodyIngotGain;
     string[] descriptionArray, flippedDescriptionArray;
+    private ParticleSystem mySystemP;
     [HideInInspector] public bool reverce;
     
     
@@ -55,11 +56,18 @@ public class Major : Card {
         }
     }
     private void OnMouseDown() {
-        if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 1")) {
-            if (targetPos == transform.position) {
+        if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 1") && !MatchStats.Instance.IsPaused) {
+            if ((targetPos - transform.position).sqrMagnitude <= 0.01f) {
                 
                 MatchStats.Instance.CurrentMajorArcana = this;
             }
         }
+    }
+
+    public void SpawnParticles(int nparticles)
+    {
+
+
+
     }
 }

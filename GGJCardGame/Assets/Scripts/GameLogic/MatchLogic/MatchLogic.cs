@@ -37,8 +37,8 @@ public class MatchLogic : MonoBehaviour
         MatchStats.Instance.SetMajorArcana(card);
     }
     public void StartTurn() {
-        MatchStats.Instance.currentBodyIngots += MatchStats.Instance.CurrentMajorArcana.BodyIngotGain;
-        MatchStats.Instance.currentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
+        MatchStats.Instance.CurrentBodyIngots += MatchStats.Instance.CurrentMajorArcana.BodyIngotGain;
+        MatchStats.Instance.CurrentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
     }
     public void EndTurn() {
         MatchStats.Instance.animator.SetTrigger(MatchStats.Instance.finishedStateParam);
