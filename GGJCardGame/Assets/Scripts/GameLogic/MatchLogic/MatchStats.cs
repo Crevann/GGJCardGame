@@ -55,6 +55,7 @@ public class MatchStats : MonoBehaviour {
     public string choseMajorParam;
     public string finishedStateParam;
     public string currentTurnParam;
+    public string currentMatchParam;
     public string endGameParam;
     public Button button;
     
@@ -99,7 +100,6 @@ public class MatchStats : MonoBehaviour {
     [SerializeField] private float spacing;
     [SerializeField] private float spacingTurns;
     public Minor[] CurrentMinorArcanaHand { get { return currentMinorArcanaHand; } }
-    public bool isFirstMinorArcana;
     private List<Minor> currentMinorsOnMajor;
     public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
 
@@ -130,6 +130,9 @@ public class MatchStats : MonoBehaviour {
     public void StartMatch(LevelDifficulty levelDifficulty) {
         difficulty = levelDifficulty;
         ResetStats();
+        MatchLogic.Instance.majorDeck.RestoreOriginalDeck();
+        MatchLogic.Instance.minorDeck.RestoreOriginalDeck();
+        MatchLogic.Instance.problemsDeck.RestoreOriginalDeck();
     }
 
     public void ResetStats() {
@@ -141,9 +144,13 @@ public class MatchStats : MonoBehaviour {
     }
 
     public void EmptyHands() {
+        currentMajorArcana.MoveTo(majorDeckPos.position);
+        currentMajorArcana.gameObject.SetActive(false);
         currentMajorArcana = null;
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
-            currentMinorArcanaHand[i] = null; //TODO non deve andare a null ma rimettere le carte non usate nel mazzo originale
+            currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.minorDeck.transform;
+            currentMinorArcanaHand[i].gameObject.SetActive(false);
+            currentMinorArcanaHand[i] = null;
         }
     }
     public int GetProblemsStability() {
@@ -163,12 +170,18 @@ public class MatchStats : MonoBehaviour {
 
     public void EmptyProblems() {
         for (int i = 0; i < currentProblems.Length; i++) {
-            currentProblems[i] = null; //TODO
+            currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.problemsDeck.transform;
+            currentMinorArcanaHand[i].gameObject.SetActive(false);
+            currentProblems[i] = null;
         }
     }
 
     public void EmptyCardsOnMajor() {
-        currentMinorsOnMajor.Clear(); //TODO
+        foreach (Minor minor in currentMinorsOnMajor) {
+            minor.transform.parent = MatchLogic.Instance.minorDeck.transform;
+            minor.gameObject.SetActive(false);
+        }
+        currentMinorsOnMajor.Clear();
     }
 
     public void SetMajorArcana(Major card) {
