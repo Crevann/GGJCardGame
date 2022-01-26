@@ -5,6 +5,7 @@ using UnityEngine;
 public class F4ResetRound : StateMachineBehaviour
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        animator.SetInteger(MatchStats.Instance.currentTurnParam, 0);
         CleanTable();
         for (int i = 0; i < 5; i++) {
             TurnLamps.Instance.TurnOffLamp(i);

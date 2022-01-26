@@ -97,7 +97,7 @@ public class MatchStats : MonoBehaviour {
     [Range(0, 5)] public int maxProblems;
     public Transform firstProblemPos, lastProblemPos;
     public Transform problemDeckPos;
-    private Problem[] currentProblems;
+    [SerializeField] private Problem[] currentProblems;
     public Problem[] CurrentProblems { get { return currentProblems; } }
 
     private static MatchStats instance;
@@ -131,6 +131,7 @@ public class MatchStats : MonoBehaviour {
         currentStability = 0;
         EmptyHands();
         EmptyCardsOnMajor();
+        EmptyProblems();
     }
 
     public void EmptyHands() {
@@ -160,8 +161,8 @@ public class MatchStats : MonoBehaviour {
 
     public void EmptyProblems() {
         for (int i = 0; i < currentProblems.Length; i++) {
-            currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.problemsDeck.transform;
-            currentMinorArcanaHand[i].gameObject.SetActive(false);
+            currentProblems[i].transform.parent = MatchLogic.Instance.problemsDeck.transform;
+            currentProblems[i].gameObject.SetActive(false);
             currentProblems[i] = null;
         }
     }
