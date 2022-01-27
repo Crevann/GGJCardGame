@@ -16,4 +16,4 @@ MonoBehaviour:
   stabilityChange: 5
   description: You dragged feet while working on your assignment, as you stare at
     the amount of work left is slowly realize just how long a night this will be.
-  cardFace: {fileID: 21300000, guid: 1618dcf94660d8c4ebb9b2fd2f271afd, type: 3}
+  cardFace: {fileID: -2043040068, guid: f637cddec53ebec4e959e6aee85136a1, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Lucky Coin
   stabilityChange: 0
   description: You just found a lucky coin, congrats!
-  cardFace: {fileID: 21300000, guid: 1618dcf94660d8c4ebb9b2fd2f271afd, type: 3}
+  cardFace: {fileID: -758425442, guid: f637cddec53ebec4e959e6aee85136a1, type: 3}
