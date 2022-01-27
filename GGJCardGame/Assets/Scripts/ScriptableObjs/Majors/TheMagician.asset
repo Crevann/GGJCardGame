@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: The Magician
   soulCoinGain: 2
   bodyIngotGain: 2
-  cardFace: {fileID: -1922632332, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  cardFace: {fileID: 21300000, guid: c7fff2a83f8508e4a86a0d5bf78d8d9d, type: 3}
   reverceSoulCoinGain: 2
   reverseBodyIngotGain: 1
   descriptionArray:

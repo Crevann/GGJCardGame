@@ -11,7 +11,8 @@ public class MinorDeck : Deck<Minor>
         for (int i = 0; i < minorsToCreate.Length; i++) {
             deck[i] = Instantiate(minorCardPrefab);
             deck[i].minorData = minorsToCreate[i];
-            deck[i].transform.parent = transform;
+            deck[i].transform.SetParent(transform);
+            deck[i].transform.localPosition = Vector3.zero;
             deck[i].gameObject.SetActive(false);
         }
         base.Start();

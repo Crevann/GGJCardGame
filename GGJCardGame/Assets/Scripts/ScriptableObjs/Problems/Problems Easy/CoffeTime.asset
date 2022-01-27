@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: CoffeTime
   stabilityChange: 3
   description: You Spilled some very hot coffee on yourself !
-  cardFace: {fileID: -2026520160, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  cardFace: {fileID: 21300000, guid: 1618dcf94660d8c4ebb9b2fd2f271afd, type: 3}

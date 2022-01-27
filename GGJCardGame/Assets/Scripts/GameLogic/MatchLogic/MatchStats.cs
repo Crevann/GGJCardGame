@@ -149,6 +149,7 @@ public class MatchStats : MonoBehaviour {
         currentMajorArcana.gameObject.SetActive(false);
         currentMajorArcana = null;
         for (int i = 0; i < currentMinorArcanaHand.Length; i++) {
+            if (currentMinorArcanaHand[i] == null) continue;
             currentMinorArcanaHand[i].transform.parent = MatchLogic.Instance.minorDeck.transform;
             currentMinorArcanaHand[i].gameObject.SetActive(false);
             currentMinorArcanaHand[i] = null;
@@ -192,7 +193,8 @@ public class MatchStats : MonoBehaviour {
     public void AddCardToMajor(Minor card) {
         card.MoveTo(new Vector3(startingMinorPosition.position.x + (spacing * (currentMinorsOnMajor.Count - 1)) + (spacingTurns * (animator.GetInteger(currentTurnParam) - 1)), 
             startingMinorPosition.position.y, 
-            0));
+            currentMinorsOnMajor.Count - 1));
+        card.RotateTo(Quaternion.Euler(Vector3.zero));
         card.transform.parent = currentMajorArcana.transform;
         RemoveMinorArcanaFromHand(card);
         currentMinorsOnMajor.Add(card);
