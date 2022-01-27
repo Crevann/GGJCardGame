@@ -10,6 +10,35 @@ public class Minor : Card {
     int bodyIngotCost;
     int soul, body;
     public float stabilityGain = Mathf.Infinity;
+
+    [SerializeField] private float timeToDescription = 0.5f;
+    private float hoverCounter;
+    private bool isHoverActive = false;
+    private bool removeDescriptionWhenPossible = false;
+
+    public bool IsHoverActive
+    {
+        get { return isHoverActive; }
+        set
+        {
+            isHoverActive = value;
+            if (isHoverActive)
+            {
+                DescriptionPage.Instance.StringToWrite = cardName + ":\n\n" +
+                    MatchStats.Instance.CurrentMajorArcana.GetMinorDescription(cardName);
+            } else
+            {
+                if (MatchStats.Instance.IsPaused)
+                {
+                    removeDescriptionWhenPossible = true;
+                    return;
+                }
+
+                DescriptionPage.Instance.StringToWrite = null;
+            }
+        }
+    }
+
     Sprite cardFace {
         set {
             GetComponent<SpriteRenderer>().sprite = value;
@@ -54,6 +83,7 @@ public class Minor : Card {
 
     
     public override void Start() {
+        hoverCounter = 0;
         base.Start();
         if (stabilityGain == Mathf.Infinity) {
             if (soul > body) stabilityGain = soul;
@@ -66,6 +96,11 @@ public class Minor : Card {
         base.Update();
         if (CheckCostCard()) {
 
+        }
+        if (removeDescriptionWhenPossible && !MatchStats.Instance.IsPaused)
+        {
+            removeDescriptionWhenPossible = false;
+            IsHoverActive = false;
         }
         
     }
@@ -91,14 +126,19 @@ public class Minor : Card {
         
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseOver() {
         if (MatchStats.Instance.IsPaused) return;
-        DescriptionPage.Instance.StringToWrite = cardName +":\n\n"+
-            MatchStats.Instance.CurrentMajorArcana.GetMinorDescription(cardName);
+
+        if(!isHoverActive) hoverCounter += Time.deltaTime;
+        if (hoverCounter >= timeToDescription && !isHoverActive)
+        {
+            IsHoverActive = true;
+        }
+
     }
     private void OnMouseExit() {
-        if (MatchStats.Instance.IsPaused) return;
-        DescriptionPage.Instance.StringToWrite = null;
+        hoverCounter = 0;
+        IsHoverActive = false;
     }
 
     private void OnMouseDown()
