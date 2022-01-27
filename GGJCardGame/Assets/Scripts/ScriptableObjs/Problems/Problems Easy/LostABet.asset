@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: LostABet
   stabilityChange: 2
   description: Sometimes you have to take some risks, tish time you risked to much
-  cardFace: {fileID: 223122563, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  cardFace: {fileID: 21300000, guid: 1618dcf94660d8c4ebb9b2fd2f271afd, type: 3}

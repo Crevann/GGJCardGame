@@ -18,4 +18,4 @@ MonoBehaviour:
   soul: 0
   body: 0
   stabilityGain: Infinity
-  cardFace: {fileID: -429501236, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  cardFace: {fileID: 21300000, guid: c7fff2a83f8508e4a86a0d5bf78d8d9d, type: 3}
