@@ -12,7 +12,7 @@ public class MatchStats : MonoBehaviour {
     }
 
     
-    public int currentStability;
+    [SerializeField] private int currentStability;
     [SerializeField] FlipCardLogic soulCointIndicator;
     [SerializeField] FlipCardLogic bodyIngotIndicator;
     [SerializeField] private int currentSoulCoins = 0;
@@ -134,7 +134,19 @@ public class MatchStats : MonoBehaviour {
         MatchLogic.Instance.minorDeck.RestoreOriginalDeck();
         MatchLogic.Instance.problemsDeck.RestoreOriginalDeck();
     }
-
+    public float GetStability() {
+        int stability = 0;
+        foreach (Minor minor in CurrentMinorsOnMajor) {
+            stability += (int)minor.stabilityGain;
+        }
+        for (int i = 0; i < CurrentProblems.Length; i++) {
+            if (CurrentProblems[i] != null) {
+                stability += CurrentProblems[i].StabilityChange;
+            }
+        }
+        currentStability = stability;
+        return stability;
+    }
     public void ResetStats() {
         CurrentSoulCoins = 0;
         CurrentBodyIngots = 0;

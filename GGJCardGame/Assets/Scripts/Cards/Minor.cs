@@ -148,7 +148,13 @@ public class Minor : Card {
         {
             if (!isPlayed) {
                 PlayCard();
+                ShowFeedback();
             }
         }
+    }
+    private void ShowFeedback() {
+        float stability = (float)MatchStats.Instance.GetStability() / PlayerStats.Instance.StabilityRange;
+        PostProcessMGR.Instance.StartVignetting(stability);
+
     }
 }

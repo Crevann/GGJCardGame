@@ -8285,6 +8285,8 @@ MonoBehaviour:
   red: {r: 0, g: 0, b: 0, a: 0}
   black: {r: 0, g: 0, b: 0, a: 0}
   blue: {r: 0, g: 0, b: 0, a: 0}
+  maxSinSpeed: 10
+  baseIntencity: 0.232
 --- !u!1001 &1654301944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14131,7 +14133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744483658806275709, guid: 42883ff9a54e8aa4ab3696a3b90cd33e, type: 3}
       propertyPath: m_margin.y
-      value: 3.1327052
+      value: 0.9792501
       objectReference: {fileID: 0}
     - target: {fileID: 3838543728643377040, guid: 42883ff9a54e8aa4ab3696a3b90cd33e, type: 3}
       propertyPath: m_Name
@@ -14199,7 +14201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411943714358376792, guid: 42883ff9a54e8aa4ab3696a3b90cd33e, type: 3}
       propertyPath: posDown.y
-      value: 4.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4519375358414267236, guid: 42883ff9a54e8aa4ab3696a3b90cd33e, type: 3}
       propertyPath: m_LocalScale.x
