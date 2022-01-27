@@ -20,27 +20,29 @@ MonoBehaviour:
   reverseBodyIngotGain: 1
   descriptionArray:
   - A workout that helps you understand your goals
-  - Going to a party with friends clears your mind
-  - Eating grows healthy and strong
-  - Smoking relaxes you but don't forgetting your goals
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - The right workout will reveal the best goals.
+  - Eat healthy to grow strong.
+  - Smoke is relaxing, but don't forget your goals
+  - Crying can always help you, don't hold back.
+  - Believing in something bigger helps you keep going even in bad times.
+  - Volunteering is always a good action! So why not do it?
+  - 'REMEMBER: You must always organize yourself as best as possible if you aim high.'
+  - A difficult decision but you will not regret it.
+  - Your friends will always be with you.
+  - 'A life teacher once said: give it your all and don''t give up we can all do
+    it.'
+  - A kitten is still a kitten.
   flippedDescriptionArray:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - If you don't put more effort into it, you won't get anywhere.
+  - Don't mess up this time.
+  - You eating without see on your plate?
+  - Smoking won't make you feel cooler.
+  - Even if you cry no one will help you, you have to make it on your own.
+  - Surely someone up there could help you, but you have to deserve their help.
+  - Helping people when you're the first one in need, ironic.
+  - Don't take lightly any offer they make you. You might regret it.
+  - 'If you got better organized maybe you will be successful this time. '
+  - You shouldn't waste your time with those who aren't your friends.
+  - 'A life master once said: there is no point in copying from others, if you want
+    to get somewhere you have to make it on your own.'
+  - He can help you, at least that's what they told me.
