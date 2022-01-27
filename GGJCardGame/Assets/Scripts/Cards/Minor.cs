@@ -4,6 +4,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Minor : Card {
+    [SerializeField] [ColorUsage(true, true)] private Color glowOff;
+    [SerializeField] [ColorUsage(true, true)] private Color glowOn;
+    [SerializeField] private float colorGlowSpeed;
+    private SpriteRenderer sr;
     private bool isPlayed;
     string cardName;
     int soulCoinsCost;
@@ -91,11 +95,19 @@ public class Minor : Card {
         }
     }
 
+    private void Awake() {
+        sr = GetComponent<SpriteRenderer>();
+        sr.material = Instantiate<Material>(sr.material);
+    }
+
 
     public override void Update() {
         base.Update();
-        if (CheckCostCard()) {
-
+        if (CheckCostCard() && !isPlayed) {
+            sr.material.color = Color.Lerp(sr.material.color, glowOn, colorGlowSpeed * Time.deltaTime);
+        }
+        else {
+            sr.material.color = Color.Lerp(sr.material.color, glowOff, colorGlowSpeed * 3 * Time.deltaTime);
         }
         if (removeDescriptionWhenPossible && !MatchStats.Instance.IsPaused)
         {

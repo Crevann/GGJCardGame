@@ -7331,7 +7331,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f30c357b56ea0e4380ef01e3971bb40, type: 2}
   - {fileID: 11400000, guid: 05f6387550aa69b4c9f8db65eafae23d, type: 2}
   - {fileID: 11400000, guid: 90e61bea9904d9743913814c30ce85b9, type: 2}
-  - {fileID: 11400000, guid: 71aa8ddf0fd3dbf4598aa91677069faa, type: 2}
   - {fileID: 11400000, guid: 8349a97903d120049a57178e98207f87, type: 2}
   minorCardPrefab: {fileID: 4559637805127611488, guid: 32922b7da7f06584cb132829c6d7c9a7, type: 3}
 --- !u!212 &1051637944

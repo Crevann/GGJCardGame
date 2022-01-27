@@ -180,7 +180,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9927a66a1ab146349a8fba3bb26df858, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,12 +201,12 @@ SpriteRenderer:
   m_SortingLayerID: -1086506191
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c7fff2a83f8508e4a86a0d5bf78d8d9d, type: 3}
+  m_Sprite: {fileID: -1594055437, guid: 0738451a0a3a3674a828c38edce85a81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.1666667, y: 3.5119047}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -224,10 +224,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97424e8c9a9c9c845b21090064046588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardBack: {fileID: -1740283951, guid: 6ceeabb240830584394782c5832fb463, type: 3}
+  cardBack: {fileID: 605753523, guid: 0738451a0a3a3674a828c38edce85a81, type: 3}
   movementSpeed: 3
   minRot: {x: 0, y: 0, z: 0.17364818, w: 0.9848077}
   maxRot: {x: 0, y: 0, z: -0.17364818, w: 0.9848077}
+  glowOff: {r: 0, g: 0, b: 0, a: 0}
+  glowOn: {r: 11.984314, g: 11.984314, b: 11.984314, a: 0}
+  colorGlowSpeed: 0.5
   stabilityGain: Infinity
   timeToDescription: 0.5
 --- !u!61 &4530926476751122852
@@ -248,7 +251,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.1666667, y: 3.5119047}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.1666667, y: 3.5119047}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
