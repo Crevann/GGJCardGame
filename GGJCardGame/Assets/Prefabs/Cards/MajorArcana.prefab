@@ -102,6 +102,19 @@ MonoBehaviour:
   movementSpeed: 3
   minRot: {x: 0, y: 0, z: 0, w: 0}
   maxRot: {x: 0, y: 0, z: 0, w: 0}
+  namesOfMinors:
+  - Workout
+  - Party
+  - Eat
+  - Smoke
+  - Cry
+  - Pray
+  - Volunteering
+  - Adopt
+  - Reorganize
+  - Socialize
+  - Caio
+  - Creature
   reverce: 0
 --- !u!61 &6204318671757745896
 BoxCollider2D:

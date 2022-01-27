@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Major : Card {
+    Dictionary<string, string> dictionary = new Dictionary<string, string>();
     string cardName;
     int getMinors = 3;
     int soulCoinGain;
     int bodyIngotGain;
     int reverceSoulCoinGain, reverseBodyIngotGain;
+    [SerializeField] string[] namesOfMinors;
     string[] descriptionArray, flippedDescriptionArray;
     private ParticleSystem mySystemP;
     [HideInInspector] public bool reverce;
@@ -19,14 +21,22 @@ public class Major : Card {
             GetComponent<SpriteRenderer>().sprite = value;
         }
     }
+    public string GetMinorDescription(string minorName) {
+        return dictionary[minorName];
+    }
+    
     public override void Start() {
         base.Start();
+        
         if (Random.Range(0, 2) == 0) {
             reverce = false;
             transform.rotation = new Quaternion(0, 0, 0, 1);
         } else {
             reverce = true;
             targetRot = new Quaternion(0, 0, 1, 0); //sottosopra
+        }
+        for (int i = 0; i < namesOfMinors.Length; i++) {
+            dictionary.Add(namesOfMinors[i], reverce ? flippedDescriptionArray[i] : descriptionArray[i]);
         }
     }
     public ScriptableMajor majorData {

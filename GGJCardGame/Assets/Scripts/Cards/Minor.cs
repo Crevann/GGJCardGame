@@ -91,13 +91,20 @@ public class Minor : Card {
         
     }
 
+    private void OnMouseEnter() {
+        if (MatchStats.Instance.IsPaused) return;
+        DescriptionPage.Instance.StringToWrite = cardName +":\n\n"+
+            MatchStats.Instance.CurrentMajorArcana.GetMinorDescription(cardName);
+    }
+    private void OnMouseExit() {
+        if (MatchStats.Instance.IsPaused) return;
+        DescriptionPage.Instance.StringToWrite = null;
+    }
 
-
-
-    private void OnMouseOver()
+    private void OnMouseDown()
     {
         if (MatchStats.Instance.animator.GetCurrentAnimatorStateInfo(0).IsName("Fase 3 minor choice") && 
-            Input.GetMouseButtonDown(0) && CheckCostCard() && !MatchStats.Instance.IsPaused)
+            CheckCostCard() && !MatchStats.Instance.IsPaused)
         {
             if (!isPlayed) {
                 PlayCard();
