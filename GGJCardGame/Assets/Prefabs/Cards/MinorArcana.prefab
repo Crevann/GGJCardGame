@@ -28,7 +28,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3296591684505088201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -122,7 +122,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -1086506191
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 1
 --- !u!1 &3834585394463093532
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7046124763632388241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -392,4 +392,4 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: -1086506191
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 1

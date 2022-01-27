@@ -19,6 +19,7 @@ public class F4ResetRound : StateMachineBehaviour
 
     private void CleanTable() {
         foreach (Minor minor in MatchStats.Instance.CurrentMinorArcanaHand) {
+            if (minor == null) continue;
             minor.MoveTo(MatchLogic.Instance.minorDeck.transform.position, true);
         }
         foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {

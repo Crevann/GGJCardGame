@@ -37,6 +37,11 @@ public abstract class Card : MonoBehaviour
         if (rotate) targetRot = Quaternion.Lerp(minRot, maxRot, Random.Range(0.0f, 1f));
         //TODO animation
     }
+
+    public void RotateTo(Quaternion rot) {
+        targetRot = rot;
+    }
+
     public virtual void InGame()
     {
         //shows itself to be choosen
