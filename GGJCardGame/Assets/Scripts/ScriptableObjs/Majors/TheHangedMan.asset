@@ -19,12 +19,15 @@ MonoBehaviour:
   reverceSoulCoinGain: 1
   reverseBodyIngotGain: 2
   descriptionArray:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - While hard, this workout will fortify your spirit.
+  - 'More than a party this is a necessary evil. Get through it and you''ll become
+    stronger. '
+  - 'It was a difficult catch, but with the prey in your hands you gain insight in
+    it''s life. '
+  - It's a stressful lifestyle, take a break and smoke a little.
+  - You need to be strong for the others, you hold back your tears through sheer
+    determination.
+  - 'Your faith is strong: praying will protect you'
   - 
   - 
   - 
