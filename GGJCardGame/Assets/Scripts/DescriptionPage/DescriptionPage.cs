@@ -47,6 +47,12 @@ public class DescriptionPage : MonoBehaviour
     float CurveWeightedRandom(AnimationCurve curve) {
         return curve.Evaluate(Random.value);
     }
+
+    public void GoDown() {
+        currentString = null;
+        stringToWrite = null;
+        up = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -83,6 +89,5 @@ public class DescriptionPage : MonoBehaviour
                 t = 0;
             }
         }
-        
     }
 }
