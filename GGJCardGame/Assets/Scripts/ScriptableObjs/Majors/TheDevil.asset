@@ -19,8 +19,9 @@ MonoBehaviour:
   reverceSoulCoinGain: 1
   reverseBodyIngotGain: 3
   descriptionArray:
-  - Ignite your competitive spirit, train as hard as you can
-  - Organize a social gathering for the upstanding citizens .
+  - Ignite your competitive spirit, train as hard as you canIgnite your competitive
+    spirit, train as hard as you can.
+  - Organize a social gathering for the upstanding citizens.ns .
   - 'You over-indulge in your favourite sweets. '
   - This is my last cigarette,  I swear.
   - I'd rather cry than lash out.
@@ -29,19 +30,19 @@ MonoBehaviour:
   - Adopt someone so that you will be important to that person.
   - It's time to get rid of some old things.
   - It's time to make some new friends.
-  - Caio be watching you
+  - Caio be watching you.
   - You feed a stray cat.
   flippedDescriptionArray:
-  - Train to destroy your opponents
+  - Train to destroy your enemies!
   - 'Attend to a wild party, no holding back. '
-  - Your companions do not deserve to eat, WATCH THEM SUFFER
-  - You are certain that passive smoking entices people to start smoking
+  - Your companions do not deserve to eat, WATCH THEM SUFFER! SUFFER
+  - You are certain that passive smoking entices people to start smoking.
   - Make someone cry.
   - You seek help from your very own god.
   - You just struck an excellent deal with that good meaning man, you just sold him
     a fine RUPEX watch.
   - You are going to take great care of your new "guests".
   - Reorganizing that old society is making you a lot of money.
-  - You are going to join your colleagues in shady activities
+  - You are going to join your colleagues in shady activities.
   - you know the definiton? Very well, you're fired!
-  - eldritch horror
+  - eldritch horror?
