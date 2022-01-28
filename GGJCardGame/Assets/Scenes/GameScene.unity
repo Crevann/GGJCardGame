@@ -912,6 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585d6ed1693be8a4cb6f99cdb2c1d0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfDeck: []
   problemsToCreate:
   - {fileID: 11400000, guid: 245acf34d0e5f1341ac0f2efe6057d9f, type: 2}
   - {fileID: 11400000, guid: 8060b79dafa68744585758a8da6a060c, type: 2}
@@ -3886,8 +3887,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.09134684
         - serializedVersion: 3
-          time: 1
-          value: 0.021770477
+          time: 0.8458557
+          value: 0.0045280457
           inSlope: -1.9815928
           outSlope: -1.9815928
           tangentMode: 0
@@ -5991,7 +5992,7 @@ MonoBehaviour:
   maxSoulCoin: 0
   maxBodyIngots: 0
   maxCardHard: 3
-  stabilityRange: 5
+  stabilityRange: 12
 --- !u!1 &412368001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6819,7 +6820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74d63e30bf5b8344a64713e81efd7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMatches: 3
+  maxMatches: 5
 --- !u!1 &730164605
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,7 +6897,6 @@ GameObject:
   - component: {fileID: 772749566}
   - component: {fileID: 772749565}
   - component: {fileID: 772749568}
-  - component: {fileID: 772749569}
   m_Layer: 0
   m_Name: EndTurnButton
   m_TagString: Untagged
@@ -7030,18 +7030,6 @@ SortingGroup:
   m_SortingLayerID: 796584801
   m_SortingLayer: 5
   m_SortingOrder: 26
---- !u!114 &772749569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772749563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0cde33287350c41ac9b2e0b5113508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &796296765 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8663529641392953118, guid: 83ee5be27fc947944af826fa896e5a56, type: 3}
@@ -7334,6 +7322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aeadabcb99ef4346895af6c3bb1b681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfDeck: []
   minorsToCreate:
   - {fileID: 11400000, guid: 66560f94876faf94b9a197bd9c5ddd46, type: 2}
   - {fileID: 11400000, guid: 2151bb78ec50d054a9d9f0a219e7424e, type: 2}
@@ -7482,6 +7471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92207116dca0d7468e6542a43ea44d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outOfDeck: []
   majoursToCreate:
   - {fileID: 11400000, guid: 98c16e94e7f2cb647bb38e032aa786f1, type: 2}
   - {fileID: 11400000, guid: 4497c73a4a8e8584898beee3a9afc843, type: 2}
@@ -11633,8 +11623,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.09134684
         - serializedVersion: 3
-          time: 1
-          value: 0.021770477
+          time: 0.8458557
+          value: 0.0045280457
           inSlope: -1.9815928
           outSlope: -1.9815928
           tangentMode: 0

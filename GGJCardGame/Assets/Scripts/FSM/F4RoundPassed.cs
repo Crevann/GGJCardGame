@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class F4RoundPassed : StateMachineBehaviour
 {
     private ClockHand clockHand;
@@ -13,6 +13,7 @@ public class F4RoundPassed : StateMachineBehaviour
         CalculateBodySoulLevel();
         clockHand.Rotate();
         if(animator.GetInteger(MatchStats.Instance.currentMatchParam) >= GameLogic.Instance.maxMatches) {
+            SceneManager.LoadScene(2); //TODO go to victory scene
             animator.SetTrigger(MatchStats.Instance.endGameParam);
         }
         else {
