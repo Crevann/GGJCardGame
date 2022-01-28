@@ -26,8 +26,8 @@ public class F4RoundPassed : StateMachineBehaviour
 
     private void CalculateBodySoulLevel() {
         foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {
-            PlayerStats.Instance.body += minor.Body;
-            PlayerStats.Instance.soul += minor.Soul;
+            PlayerStats.body += minor.Body;
+            PlayerStats.soul += minor.Soul;
         }
     }
 }

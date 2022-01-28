@@ -19,17 +19,9 @@ public class ClockHand : MonoBehaviour
     {
         if (targetRotation != currentRotation) 
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            PlayerStats.Instance.soul++;
-            Rotate();
-                }
-        if (Input.GetKeyDown(KeyCode.T)) {
-            PlayerStats.Instance.soul--;
-            Rotate();
-                }
     }
     public void Rotate() {
-        float a = Mathf.Clamp((float)-PlayerStats.Instance.soul + PlayerStats.Instance.body, -6, 6);
+        float a = Mathf.Clamp((float)-PlayerStats.soul + PlayerStats.body, -6, 6);
         int i = (int)Mathf.Abs(a);
         targetRotation = onlyPositiveTargetRotations[i];
         if (a < 0) targetRotation.z = onlyPositiveTargetRotations[0].z - targetRotation.z;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int soul;
-    public int body;
+    static public int soul;
+    static public int body;
     [SerializeField] private int maxSoulCoin;
     public int MaxSoulCoin { get { return maxSoulCoin; } }
     [SerializeField] private int maxBodyIngots;

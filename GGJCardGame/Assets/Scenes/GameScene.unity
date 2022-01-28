@@ -5987,8 +5987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8a082f7274634aa9f18f3713a283e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soul: 0
-  body: 0
   maxSoulCoin: 0
   maxBodyIngots: 0
   maxCardHard: 3
