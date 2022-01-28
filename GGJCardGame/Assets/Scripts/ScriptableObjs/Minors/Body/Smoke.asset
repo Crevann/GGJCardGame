@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Smoke
   soulCoinsCost: 2
-  bodyIngotCost: 4
+  bodyIngotCost: 3
   soul: 1
-  body: 3
+  body: 2
   stabilityGain: 6
   cardFace: {fileID: -1789059248, guid: 0738451a0a3a3674a828c38edce85a81, type: 3}
