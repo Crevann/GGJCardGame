@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedbackTime: 4
+  lifeSentences: {fileID: 11400000, guid: cb960e1f04f935345a6de289a154d75c, type: 2}
 --- !u!114 &-7552849399981299714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbea7b7f2940be48b4455848f2ca8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 3
+  delayTime: 2
   finishStateParam: FinishedState
 --- !u!1109 &-2850201058844272692
 AnimatorTransition:
@@ -1187,7 +1188,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 3secDelay
+  m_Name: 2secDelay
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

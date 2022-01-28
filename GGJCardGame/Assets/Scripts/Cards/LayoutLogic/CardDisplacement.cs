@@ -29,7 +29,7 @@ public class CardDisplacement : MonoBehaviour
                     spacing * cardNumber :
                     handSize * 0.5f;
                 Vector3 targetPos = new Vector3(transform.position.x + cardLocalPosition, transform.position.y, 0);
-                currentCards[i].MoveTo(targetPos, false, (targetPos - currentCards[i].transform.position).sqrMagnitude > 0.2f);
+                currentCards[i].MoveTo(targetPos, false, false);
                 cardNumber++;
             }
         }
