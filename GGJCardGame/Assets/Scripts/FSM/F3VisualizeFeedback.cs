@@ -6,6 +6,7 @@ public class F3VisualizeFeedback : StateMachineBehaviour
 {
     [SerializeField] private float feedbackTime;
     private float currentFeedbackTime;
+    public ScriptableLifeSentences lifeSentences;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         ShowFeedback("When your mind is as scrambled as it just was, it feels like a rollercoaster ride! Can't wait for the next ride!");
         currentFeedbackTime = feedbackTime;
