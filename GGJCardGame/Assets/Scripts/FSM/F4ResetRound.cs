@@ -10,6 +10,7 @@ public class F4ResetRound : StateMachineBehaviour
         for (int i = 0; i < 5; i++) {
             TurnLamps.Instance.TurnOffLamp(i);
         }
+        MatchLogic.Instance.majorDeck.outOfDeck.Clear();
         animator.SetTrigger(MatchStats.Instance.finishedStateParam);
     }
 

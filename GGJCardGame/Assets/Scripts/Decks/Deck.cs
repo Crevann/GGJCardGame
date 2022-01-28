@@ -7,7 +7,7 @@ public class Deck<CardType> : MonoBehaviour{
     [SerializeField] 
     [HideInInspector] public Queue<CardType> currentDeck = new Queue<CardType>();
     private CardType tempGO;
-    private List<CardType> outOfDeck = new List<CardType>();
+    [HideInInspector] public List<CardType> outOfDeck = new List<CardType>();
     public virtual void Start() {
         RestoreOriginalDeck();
     }

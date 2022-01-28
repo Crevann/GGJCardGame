@@ -74,10 +74,4 @@ public class Major : Card {
         }
     }
 
-    public void SpawnParticles(int nparticles)
-    {
-
-
-
-    }
 }
