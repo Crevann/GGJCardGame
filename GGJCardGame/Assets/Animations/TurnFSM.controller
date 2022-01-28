@@ -162,7 +162,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1secDelay to Game over
+  m_Name: 2secDelay to Game over
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbea7b7f2940be48b4455848f2ca8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 1
+  delayTime: 2
   finishStateParam: FinishedState
 --- !u!1107 &-1005715479117782958
 AnimatorStateMachine:
@@ -1087,7 +1087,7 @@ AnimatorController:
   - m_Name: CurrentMatch
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 5
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
@@ -1218,7 +1218,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: FinishedState
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1935587294315758063}
   m_Solo: 0
@@ -1722,7 +1725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbea7b7f2940be48b4455848f2ca8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 1
+  delayTime: 2
   finishStateParam: FinishedState
 --- !u!1102 &5857627473889350547
 AnimatorState:
@@ -1862,7 +1865,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1secDelay to End
+  m_Name: 2secDelay to End
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

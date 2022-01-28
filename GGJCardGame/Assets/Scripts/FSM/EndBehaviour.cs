@@ -12,7 +12,7 @@ public class EndBehaviour : StateMachineBehaviour
     }
 
     //Returns true if done
-    private bool FadeToBlack() {
+    private bool FadeToBlack() { //TODO Fade to black
         return true;
     }
 }
