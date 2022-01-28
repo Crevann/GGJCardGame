@@ -9,6 +9,7 @@ public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         //animator.GetInteger(MatchStats.Instance.currentMatchParam) + 1
         animator.SetInteger(MatchStats.Instance.currentMatchParam, ++GameLogic.Instance.currentMatch);
+        Debug.Log(GameLogic.Instance.currentMatch);
         //Shuffle Major deck (should also includes rotarion of the card)
         MatchLogic.Instance.majorDeck.Shuffle();
         MatchLogic.Instance.minorDeck.Shuffle();
@@ -20,5 +21,6 @@ public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
             //shownMajors[i].InGame();
         }
         MatchStats.Instance.ShownMajorF1 = shownMajors;
+        TurnLamps.Instance.ActivateLamps();
     }
 }
