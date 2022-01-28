@@ -75,7 +75,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedbackTime: 4
+<<<<<<< Updated upstream
   lifeSentences: {fileID: 11400000, guid: cb960e1f04f935345a6de289a154d75c, type: 2}
+=======
+  negativeOnNegative:
+  - Be careful, you can't take much more!
+  - Things are looking bleak!
+  - Depression is such an ugly thing, you might want to do something about it.
+  positiveOnNegative:
+  - A step in the right direction, but is it going to be enough?
+  - Keep it up! I know you can do it!                     eheheh
+  - 'Might that be a light in front of you? '
+  negativeOnPositive:
+  - If the walls stop moving, that's usually a good sign.
+  - Keep your feet grounded, keep yourself in check.
+  - When your mind is as scrambled as it just was, it feels like a rollercoaster
+    ride! Can't wait for the next ride!
+  positiveOnPositive:
+  - Just so you know, rabbits aren't usually late.
+  - Goodness gracious! You're really out there now!
+  - Don't worry, it's not the end of the world; just of your sanity, that's it.
+  neutral:
+  - Mmh...
+  - 'You''re doing good! '
+  - From now on is a balancing act.
+  neutralRange: 0.2
+>>>>>>> Stashed changes
 --- !u!114 &-7552849399981299714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +189,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 3secDelay 1
+  m_Name: 1secDelay 1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

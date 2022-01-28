@@ -13,6 +13,7 @@ public class MatchStats : MonoBehaviour {
 
     
     [SerializeField] private int currentStability;
+    private int stabilityGain;
     public FlipCardLogic soulCointIndicator;
     public FlipCardLogic bodyIngotIndicator;
     [SerializeField] private int currentSoulCoins = 0;
@@ -142,7 +143,8 @@ public class MatchStats : MonoBehaviour {
     }
     public float GetStability() {
         int stability = 0;
-        foreach (Minor minor in CurrentMinorsOnMajor) {
+        foreach (Minor minor in CurrentMinorsOnMajor)
+        {
             stability += (int)minor.stabilityGain;
         }
         for (int i = 0; i < CurrentProblems.Length; i++) {
@@ -150,8 +152,14 @@ public class MatchStats : MonoBehaviour {
                 stability += CurrentProblems[i].StabilityChange;
             }
         }
+        stabilityGain = stability - currentStability;
         currentStability = stability;
         return stability;
+    }
+
+    public float GetStabilityGain() //stability changed only by played cards
+    {
+        return stabilityGain;
     }
     public void ResetStats() {
         CurrentSoulCoins = 0;
