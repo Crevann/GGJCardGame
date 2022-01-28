@@ -15,6 +15,7 @@ public class F1MajorArcanaChoiceBehaviour : StateMachineBehaviour
         for (int i = 0; i < majoursNShown; i++) {
             shownMajors[i] = MatchLogic.Instance.majorDeck.Dequeque();
             shownMajors[i].gameObject.SetActive(true);
+            shownMajors[i].SetRotation();
             //shownMajors[i].InGame();
         }
         MatchStats.Instance.ShownMajorF1 = shownMajors;

@@ -27,16 +27,19 @@ public class Major : Card {
     
     public override void Start() {
         base.Start();
-        
+
+        SetRotation();
+        for (int i = 0; i < namesOfMinors.Length; i++) {
+            dictionary.Add(namesOfMinors[i], reverce ? flippedDescriptionArray[i] : descriptionArray[i]);
+        }
+    }
+    public void SetRotation() {
         if (Random.Range(0, 2) == 0) {
             reverce = false;
             transform.rotation = new Quaternion(0, 0, 0, 1);
         } else {
             reverce = true;
             targetRot = new Quaternion(0, 0, 1, 0); //sottosopra
-        }
-        for (int i = 0; i < namesOfMinors.Length; i++) {
-            dictionary.Add(namesOfMinors[i], reverce ? flippedDescriptionArray[i] : descriptionArray[i]);
         }
     }
     public ScriptableMajor majorData {
