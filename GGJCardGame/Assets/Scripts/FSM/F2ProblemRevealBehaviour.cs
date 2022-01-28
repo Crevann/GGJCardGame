@@ -13,7 +13,7 @@ public class F2ProblemRevealBehaviour : StateMachineBehaviour
         problemShown.gameObject.SetActive(true);
 
         int i = MatchStats.Instance.AddProblem(problemShown);
-        problemShown.MoveTo(Vector3.Lerp(MatchStats.Instance.firstProblemPos.position, MatchStats.Instance.lastProblemPos.position, (float)i / (MatchStats.Instance.maxProblems - 1)), false, true);
+        problemShown.MoveTo(Vector3.Lerp(MatchStats.Instance.firstProblemPos.position, MatchStats.Instance.lastProblemPos.position, (float)i / (MatchStats.Instance.MaxProblems - 1)), false, true);
         animator.SetTrigger(MatchStats.Instance.finishedStateParam);
     }
 

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Deck<CardType> : MonoBehaviour{
     protected CardType[] deck;
-    [SerializeField] 
-    [HideInInspector] public Queue<CardType> currentDeck = new Queue<CardType>();
+    [SerializeField] public Queue<CardType> currentDeck = new Queue<CardType>();
     private CardType tempGO;
     [HideInInspector] public List<CardType> outOfDeck = new List<CardType>();
     public virtual void Start() {
@@ -26,14 +25,14 @@ public class Deck<CardType> : MonoBehaviour{
         outOfDeck.Add(removedCard);
         return removedCard;
     }
-    private void SetCurrentDeck(CardType[] d = null) {
+    protected void SetCurrentDeck(CardType[] d = null) {
         if (d == null) d = deck;
         currentDeck.Clear();
         for (int i = 0; i < d.Length; i++) {
             currentDeck.Enqueue(d[i]);
         }
     }
-    public void RestoreOriginalDeck() {
+    public virtual void RestoreOriginalDeck() {
         SetCurrentDeck();
     }
 }
