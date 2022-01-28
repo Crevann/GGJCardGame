@@ -10,6 +10,8 @@ public class FlipCardLogic : MonoBehaviour
     [SerializeField] Sprite[] allNumers = new Sprite[20];
     [SerializeField] FlipCard[] cards = new FlipCard[3];
     [SerializeField] FlipCardLogic nextDigit = null;
+    [SerializeField] float singleFlipTime = 0.5f;
+    float currentFlipTime = 0;
 
     void Start()
     {
@@ -30,14 +32,19 @@ public class FlipCardLogic : MonoBehaviour
         if(number >= 0) {
             if (nextDigit) nextDigit.ChangeDigit((int)( number / 10));
             numberToReach = number % 10;
-            if (currentNumber != numberToReach) currentNumber++;
-            else return;
+            if (currentNumber != numberToReach) {
+                if (++currentNumber == 10) {
+                    currentNumber = 0;
+                }
+            } else return;
         } else {
             if(++currentNumber == 10) {
                 currentNumber = 0;
                 if(nextDigit) nextDigit.ChangeDigit(number / 10);
             }
         }
+        MatchStats.Instance.button.gameObject.SetActive(false);
+        currentFlipTime = singleFlipTime;
         oldNumberToReach = numberToReach;
         for (int i = 0; i < cards.Length; i++) {
             switch (cards[i].location) {
@@ -73,6 +80,10 @@ public class FlipCardLogic : MonoBehaviour
             DigitFlipped();
             oldNumberToReach = numberToReach;
         }
-        
+        if (currentFlipTime > 0) currentFlipTime -= Time.deltaTime;
+        else if (currentFlipTime != Mathf.Infinity && MatchStats.Instance.shouldButtonBeActive) {
+            MatchStats.Instance.button.gameObject.SetActive(true);
+            currentFlipTime = Mathf.Infinity;
+        }
     }
 }

@@ -45,6 +45,6 @@ public class PostProcessMGR : MonoBehaviour
     {
         
         myVignette.intensity.Override(currentBaseIntencity + Mathf.Sin(Time.time * speed) * 0.05f) ; // 0.45 + (-0.05 : 0.05)
-        if (Input.GetKeyDown(KeyCode.Space)) StartVignetting(1);
+        
     }
 }

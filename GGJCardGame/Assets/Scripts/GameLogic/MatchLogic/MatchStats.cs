@@ -13,8 +13,8 @@ public class MatchStats : MonoBehaviour {
 
     
     [SerializeField] private int currentStability;
-    [SerializeField] FlipCardLogic soulCointIndicator;
-    [SerializeField] FlipCardLogic bodyIngotIndicator;
+    public FlipCardLogic soulCointIndicator;
+    public FlipCardLogic bodyIngotIndicator;
     [SerializeField] private int currentSoulCoins = 0;
     [SerializeField] ParticleSystem particleSoulCoin;
     [SerializeField] ParticleSystem particleBodyIngot;
@@ -26,9 +26,11 @@ public class MatchStats : MonoBehaviour {
             main.maxParticles = particlesToSpawn > 0 ? particlesToSpawn : 0;
             particleSoulCoin.Play();
             currentSoulCoins = value;
-            soulCointIndicator.ChangeDigit(currentSoulCoins);
+            
         }
     }
+    public bool shouldButtonBeActive = false;
+    
     [SerializeField] public int currentBodyIngots = 0;
     public int CurrentBodyIngots {
         get { return currentBodyIngots; }
@@ -38,7 +40,7 @@ public class MatchStats : MonoBehaviour {
             main.maxParticles = particlesToSpawn > 0 ? particlesToSpawn : 0;
             particleBodyIngot.Play();
             currentBodyIngots = value;
-            bodyIngotIndicator.ChangeDigit(currentBodyIngots);
+            
         }
     }
     private LevelDifficulty difficulty;
@@ -134,6 +136,10 @@ public class MatchStats : MonoBehaviour {
         MatchLogic.Instance.minorDeck.RestoreOriginalDeck();
         MatchLogic.Instance.problemsDeck.RestoreOriginalDeck();
     }
+    public void StartCardFlip() {
+        bodyIngotIndicator.ChangeDigit(currentBodyIngots);
+        soulCointIndicator.ChangeDigit(currentSoulCoins);
+    }
     public float GetStability() {
         int stability = 0;
         foreach (Minor minor in CurrentMinorsOnMajor) {
@@ -154,6 +160,7 @@ public class MatchStats : MonoBehaviour {
         EmptyHands();
         EmptyCardsOnMajor();
         EmptyProblems();
+        StartCardFlip();
     }
 
     public void EmptyHands() {

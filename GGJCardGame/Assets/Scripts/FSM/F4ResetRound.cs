@@ -23,6 +23,7 @@ public class F4ResetRound : StateMachineBehaviour
             minor.MoveTo(MatchLogic.Instance.minorDeck.transform.position, true);
         }
         foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {
+            minor.ResetCard();
             minor.MoveTo(MatchLogic.Instance.minorDeck.transform.position, true);
         }
         foreach (Problem problem in MatchStats.Instance.CurrentProblems) {

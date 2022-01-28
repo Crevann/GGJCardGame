@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class WritePrices : MonoBehaviour
 {
-    [SerializeField] TextMesh soulCoins, bodyIngots;
+    [SerializeField] TextMeshPro soulCoins, bodyIngots;
     void Start()
     {
         
