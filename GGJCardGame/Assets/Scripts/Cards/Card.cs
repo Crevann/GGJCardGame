@@ -45,6 +45,7 @@ public abstract class Card : MonoBehaviour
 
     void PlayRandomClip()
     {
+        if(!audioSource) audioSource = GetComponent<AudioSource>();
         audioSource.clip = clips[Random.Range(0, clips.Length)];
         audioSource.Play();
     }
