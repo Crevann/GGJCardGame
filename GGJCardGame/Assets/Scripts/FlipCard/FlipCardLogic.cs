@@ -32,8 +32,11 @@ public class FlipCardLogic : MonoBehaviour
         if(number >= 0) {
             if (nextDigit) nextDigit.ChangeDigit((int)( number / 10));
             numberToReach = number % 10;
-            if (currentNumber != numberToReach) currentNumber++;
-            else return;
+            if (currentNumber != numberToReach) {
+                if (++currentNumber == 10) {
+                    currentNumber = 0;
+                }
+            } else return;
         } else {
             if(++currentNumber == 10) {
                 currentNumber = 0;

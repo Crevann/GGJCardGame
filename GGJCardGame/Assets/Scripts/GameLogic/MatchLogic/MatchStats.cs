@@ -160,6 +160,7 @@ public class MatchStats : MonoBehaviour {
         EmptyHands();
         EmptyCardsOnMajor();
         EmptyProblems();
+        StartCardFlip();
     }
 
     public void EmptyHands() {

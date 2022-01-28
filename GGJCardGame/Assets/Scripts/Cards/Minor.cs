@@ -116,7 +116,9 @@ public class Minor : Card {
         }
         
     }
-
+    public void ResetCard() {
+        isPlayed = false;   
+    }
 
     public override void InGame()
     {
