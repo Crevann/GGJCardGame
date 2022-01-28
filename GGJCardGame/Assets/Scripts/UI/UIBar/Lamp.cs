@@ -40,6 +40,7 @@ public class Lamp : MonoBehaviour
         else {
             lampLight.intensity = Mathf.Lerp(lampLight.intensity, 0, lampTurnSpeed * Time.deltaTime);
             lampString.material.color = Color.Lerp(lampString.material.color, lampStringOffGlowColor, lampTurnSpeed * Time.deltaTime);
+            wasOn = false;
         }
     }
 
