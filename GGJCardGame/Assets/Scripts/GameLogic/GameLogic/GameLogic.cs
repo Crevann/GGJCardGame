@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public int maxMatches;
-
+    public int currentMatch = 1;
     [Header("LIFE FLAGS")]
     //Empty
 
