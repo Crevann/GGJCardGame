@@ -5,11 +5,31 @@ using UnityEngine;
 public class F3VisualizeFeedback : StateMachineBehaviour
 {
     [SerializeField] private float feedbackTime;
+    private float currentStability;
+    private float oldStability = 0;
     private float currentFeedbackTime;
     public ScriptableLifeSentences lifeSentences;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        ShowFeedback("When your mind is as scrambled as it just was, it feels like a rollercoaster ride! Can't wait for the next ride!");
+        currentStability = MatchStats.Instance.GetStability();
         currentFeedbackTime = feedbackTime;
+        if (oldStability == currentStability) {
+            ShowFeedback(lifeSentences.neutralSentences);
+        }else if (oldStability <= 0) {
+            if(currentStability < oldStability) {
+                ShowFeedback(lifeSentences.moreDepressionSentences);
+            }
+            else {
+                ShowFeedback(lifeSentences.lessDepressionSentences);
+            }
+        }else if (oldStability >= 0) {
+            if (currentStability < oldStability) {
+                ShowFeedback(lifeSentences.lessMadnessSentences);
+            }
+            else {
+                ShowFeedback(lifeSentences.moreMadnessSentences);
+            }
+        }
+        oldStability = currentStability;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -19,14 +39,14 @@ public class F3VisualizeFeedback : StateMachineBehaviour
         }
     }
 
-    private void ShowFeedback(string feedback) {
-        DescriptionPage.Instance.StringToWrite = feedback;
+    private void ShowFeedback(string[] feedback) {
+        DescriptionPage.Instance.StringToWrite = feedback[Random.Range(0, feedback.Length)];
         float stability = (float)MatchStats.Instance.GetStability() / PlayerStats.Instance.StabilityRange;
         PostProcessMGR.Instance.StartVignetting(stability);
         
     }
     private void NextState(Animator animator) {
-        DescriptionPage.Instance.GoDown();
+        DescriptionPage.Instance.StringToWrite = null;
         if (animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.maxProblems) {
             animator.SetTrigger(MatchStats.Instance.endGameParam);
         }

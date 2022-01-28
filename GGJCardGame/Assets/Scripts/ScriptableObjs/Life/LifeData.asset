@@ -12,8 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157749ba6fd58124ebd6805f96711282, type: 3}
   m_Name: LifeData
   m_EditorClassIdentifier: 
-  totalDepressionSentences: []
-  depressionSentences: []
-  neutralSentences: []
-  madnessSentences: []
-  totalMadnessSentences: []
+  moreDepressionSentences:
+  - Be careful, you can't take much more!
+  - Things are looking bleak!
+  - 'Depression is such an ugly thing, you might want to do something about it. '
+  lessDepressionSentences:
+  - 'A step in the right direction, but is it going to be enough? '
+  - Keep it up! I know you can do it! Eheheh...
+  - 'Might that be a light in front of you? '
+  neutralSentences:
+  - Mmh...
+  lessMadnessSentences:
+  - If the walls stop moving, that's usually a good sign.
+  - Keep your feet grounded, keep yourself in check.
+  - When your mind is as scrambled as it just was, it feels like a rollercoaster
+    ride! Can't wait for the next one!
+  moreMadnessSentences:
+  - Just so you know, rabbits aren't usually late.
+  - Goodness gracious! You're really out there now!
+  - Don't worry, it's not the end of the world; just of your sanity, that's it.

@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LifeData", menuName = "ScriptableObjects/LifeScriptableSentences")]
 public class ScriptableLifeSentences : ScriptableObject
 {
-    public string[] totalDepressionSentences;
-    public string[] depressionSentences;
+    public string[] moreDepressionSentences;
+    public string[] lessDepressionSentences;
     public string[] neutralSentences;
-    public string[] madnessSentences;
-    public string[] totalMadnessSentences;
+    public string[] lessMadnessSentences;
+    public string[] moreMadnessSentences;
 }

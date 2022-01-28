@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feedbackTime: 4
+  lifeSentences: {fileID: 11400000, guid: cb960e1f04f935345a6de289a154d75c, type: 2}
 --- !u!114 &-7552849399981299714
 MonoBehaviour:
   m_ObjectHideFlags: 1
