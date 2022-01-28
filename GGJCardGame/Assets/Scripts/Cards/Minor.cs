@@ -129,6 +129,7 @@ public class Minor : Card {
         MatchStats.Instance.CurrentBodyIngots -= bodyIngotCost;
         MatchStats.Instance.CurrentSoulCoins -= soulCoinsCost;
         MatchStats.Instance.AddCardToMajor(this);
+        MatchStats.Instance.StartCardFlip();
         CardDisplacement.Instance.DisplayCards();
     }
 
