@@ -1010,6 +1010,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfe662eade25af84cb083e530abe005e, type: 2}
   - {fileID: 11400000, guid: d09896eb51732d440b28c16fd96789c2, type: 2}
   - {fileID: 11400000, guid: 434847345c9595944bb0c2a07cafab84, type: 2}
+  cardsOfRound1: 0000000001000000020000000a0000000b0000000500000003000000
+  cardsOfRound2: 0000000001000000020000000700000003000000
+  cardsOfRound3: 000000000100000002000000040000000500000006000000
+  cardsOfRound4: 030000000400000005000000060000000700000000000000
+  cardsOfRound5: 03000000040000000500000006000000070000000800000009000000
   originalPrefab: {fileID: 6556213114318007868, guid: 40befc29cde86384bbddace2bbd911d1, type: 3}
 --- !u!212 &280608252
 SpriteRenderer:
@@ -6076,7 +6081,7 @@ MonoBehaviour:
   maxSoulCoin: 0
   maxBodyIngots: 0
   maxCardHard: 3
-  stabilityRange: 12
+  stabilityRange: 13
 --- !u!1 &412368001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,6 +6910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMatches: 5
+  currentMatch: 1
 --- !u!1 &730164605
 GameObject:
   m_ObjectHideFlags: 0

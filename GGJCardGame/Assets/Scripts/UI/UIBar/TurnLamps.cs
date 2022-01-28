@@ -20,13 +20,16 @@ public class TurnLamps : MonoBehaviour
         if(instance == null) {
             instance = this;
         }
+        ActivateLamps();
+    }
+    public void ActivateLamps() {
         for (int i = 0; i < lamps.Length; i++) {
-            if(i >= MatchStats.Instance.maxProblems) {
+            lamps[i].gameObject.SetActive(true);
+            if (i >= MatchStats.Instance.MaxProblems) {
                 lamps[i].gameObject.SetActive(false);
             }
         }
     }
-
     public void TurnOnLamp(int lamp) {
         lamps[lamp].isOn = true;
         lamps[lamp].currentFlickerTime = lamps[lamp].flickerTime;

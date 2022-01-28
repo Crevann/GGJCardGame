@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public int maxMatches;
-
+    public int currentMatch = 0;//TODO
     [Header("LIFE FLAGS")]
+    //Empty
+    [Header("LIFE GOALS")]
     //Empty
 
     private static GameLogic instance;

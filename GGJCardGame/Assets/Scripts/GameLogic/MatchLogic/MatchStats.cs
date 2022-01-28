@@ -106,7 +106,11 @@ public class MatchStats : MonoBehaviour {
     public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
 
     [Header("SET PROBLEMS")]
-    [Range(0, 5)] public int maxProblems;
+    [Range(0, 5)] [SerializeField] int maxProblems = 3;
+    public int MaxProblems {
+        get { if (!GameLogic.Instance) return maxProblems;
+            return maxProblems + (GameLogic.Instance.currentMatch >= 3 ? 1 : 0) + (GameLogic.Instance.currentMatch >= 5 ? 1 : 0); }
+    }
     public Transform firstProblemPos, lastProblemPos;
     public Transform problemDeckPos;
     [SerializeField] private Problem[] currentProblems;
@@ -126,7 +130,7 @@ public class MatchStats : MonoBehaviour {
         currentMajorArcana = null;
         currentMinorArcanaHand = new Minor[PlayerStats.Instance.MaxCardHard];
         currentMinorsOnMajor = new List<Minor>();
-        currentProblems = new Problem[maxProblems];
+        currentProblems = new Problem[MaxProblems];
     }
 
     public void StartMatch(LevelDifficulty levelDifficulty) {
