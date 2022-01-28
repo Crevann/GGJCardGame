@@ -46,15 +46,16 @@ public class MatchLogic : MonoBehaviour
     public void CleanTable() {
         foreach (Minor minor in MatchStats.Instance.CurrentMinorArcanaHand) {
             if (minor == null) continue;
-            minor.MoveTo(MatchLogic.Instance.minorDeck.transform.position, true);
+            minor.MoveTo(minorDeck.transform.position, true);
         }
         foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {
             minor.ResetCard();
-            minor.MoveTo(MatchLogic.Instance.minorDeck.transform.position, true);
+            minor.MoveTo(minorDeck.transform.position, true);
         }
         foreach (Problem problem in MatchStats.Instance.CurrentProblems) {
-            problem.MoveTo(MatchLogic.Instance.problemsDeck.transform.position, true);
+            problem.MoveTo(problemsDeck.transform.position, true);
         }
+        DescriptionPage.Instance.StringToWrite = null;
         MatchStats.Instance.CurrentMajorArcana.MoveTo(MatchStats.Instance.majorDeckPos.position, true);
     }
 }
