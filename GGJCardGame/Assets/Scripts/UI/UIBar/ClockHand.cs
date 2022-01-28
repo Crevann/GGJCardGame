@@ -17,7 +17,8 @@ public class ClockHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (targetRotation != currentRotation) transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        if (targetRotation != currentRotation) 
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         if (Input.GetKeyDown(KeyCode.Space)) {
             PlayerStats.Instance.soul++;
             Rotate();
@@ -29,7 +30,8 @@ public class ClockHand : MonoBehaviour
     }
     public void Rotate() {
         float a = Mathf.Clamp((float)-PlayerStats.Instance.soul + PlayerStats.Instance.body, -6, 6);
-        targetRotation = onlyPositiveTargetRotations[(int)Mathf.Abs(a)];
+        int i = (int)Mathf.Abs(a);
+        targetRotation = onlyPositiveTargetRotations[i];
         if (a < 0) targetRotation.z = onlyPositiveTargetRotations[0].z - targetRotation.z;
         //targetRotation = Quaternion.Lerp(maxRotationSoul, maxRotationBody, a);
         currentRotation = transform.rotation;
