@@ -1303,7 +1303,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
+      scalar: 6
       minScalar: 4
       maxCurve:
         serializedVersion: 2
@@ -8281,10 +8281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d839e97e69925c24f8f730b535f68810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  red: {r: 0, g: 0, b: 0, a: 0}
+  red: {r: 1, g: 0, b: 0, a: 0}
   black: {r: 0, g: 0, b: 0, a: 0}
-  blue: {r: 0, g: 0, b: 0, a: 0}
-  maxSinSpeed: 10
+  blue: {r: 0, g: 0.2258637, b: 1, a: 0}
+  maxSinSpeed: 5
   baseIntencity: 0.232
 --- !u!1001 &1654301944
 PrefabInstance:
@@ -8908,8 +8908,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 5
-      minScalar: 3
+      scalar: 6
+      minScalar: 4
       maxCurve:
         serializedVersion: 2
         m_Curve:
