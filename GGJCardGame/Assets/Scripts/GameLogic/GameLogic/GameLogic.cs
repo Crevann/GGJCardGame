@@ -7,7 +7,7 @@ public class GameLogic : MonoBehaviour
     public int maxMatches;
 
     [Header("LIFE FLAGS")]
-    //Empty
+    static public bool hasLost;
 
     private static GameLogic instance;
     public static GameLogic Instance { get { return instance; } }

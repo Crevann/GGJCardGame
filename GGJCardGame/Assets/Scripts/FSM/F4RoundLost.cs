@@ -6,6 +6,11 @@ public class F4RoundLost : StateMachineBehaviour
 {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Game over"); //TODO Ritorna al menu, dopo dialogo della vita
+        GameLogic.hasLost = true;
+        MatchLogic.Instance.CleanTable();
+        for (int i = 0; i < 5; i++) {
+            TurnLamps.Instance.TurnOffLamp(i);
+        }
+        animator.SetTrigger(MatchStats.Instance.finishedStateParam);
     }
 }
