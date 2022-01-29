@@ -16,23 +16,31 @@ public class Lamp : MonoBehaviour
     public float currentFlickerTime;
     public float flickerTime;
     public bool isOn;
+    private bool wasOn = false;
+    private AudioSource lightSound;
 
     private void Awake() {
         lampString.material = Instantiate<Material>(lampString.material);
+        lightSound = GetComponent<AudioSource>();
     }
     private void Update() {
         if (isOn) {
+            if (!wasOn)
+            {
+                lightSound.Play();
+            }
             lampLight.intensity = Mathf.Lerp(lampLight.intensity, lampIntensity, lampTurnSpeed * Time.deltaTime);
             lampString.material.color = Color.Lerp(lampString.material.color, lampStringOnGlowColor, lampTurnSpeed * Time.deltaTime);
             if(currentFlickerTime > 0) {
                 Flicker();
                 currentFlickerTime -= Time.deltaTime;
             }
-            
+            wasOn = true;
         }
         else {
             lampLight.intensity = Mathf.Lerp(lampLight.intensity, 0, lampTurnSpeed * Time.deltaTime);
             lampString.material.color = Color.Lerp(lampString.material.color, lampStringOffGlowColor, lampTurnSpeed * Time.deltaTime);
+            wasOn = false;
         }
     }
 

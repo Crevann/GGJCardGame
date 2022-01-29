@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int maxCardHard;
     public int MaxCardHard { get { return maxCardHard; } }
     [SerializeField] private int stabilityRange;
-    public int StabilityRange { get { return stabilityRange; } }
+    public int StabilityRange { get { return stabilityRange - (int)(GameLogic.Instance.currentMatch * 1.5f); } }
 
     private static PlayerStats instance;
     public static PlayerStats Instance {

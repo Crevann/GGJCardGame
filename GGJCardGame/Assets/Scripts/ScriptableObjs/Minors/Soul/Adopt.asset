@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Adopt
   m_EditorClassIdentifier: 
   cardName: Adopt
-  soulCoinsCost: 5
+  soulCoinsCost: 4
   bodyIngotCost: 2
-  soul: 4
+  soul: 3
   body: 0
   stabilityGain: -6
   cardFace: {fileID: -646414875, guid: 0738451a0a3a3674a828c38edce85a81, type: 3}

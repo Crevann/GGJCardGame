@@ -34,9 +34,10 @@ public class Major : Card {
         }
     }
     public void SetRotation() {
+        transform.rotation = new Quaternion(0, 0, 0, 1);
         if (Random.Range(0, 2) == 0) {
             reverce = false;
-            transform.rotation = new Quaternion(0, 0, 0, 1);
+            targetRot = new Quaternion(0, 0, 0, 1);
         } else {
             reverce = true;
             targetRot = new Quaternion(0, 0, 1, 0); //sottosopra

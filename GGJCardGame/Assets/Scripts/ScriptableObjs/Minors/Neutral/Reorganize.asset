@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Reorganize
   m_EditorClassIdentifier: 
   cardName: Reorganize
-  soulCoinsCost: 4
-  bodyIngotCost: 4
+  soulCoinsCost: 3
+  bodyIngotCost: 3
   soul: 0
   body: 0
   stabilityGain: -5

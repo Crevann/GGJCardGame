@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public abstract class Card : MonoBehaviour
 {
     Animator anim;
     [SerializeField] Sprite cardBack;
     [SerializeField] float movementSpeed = 3;
     [SerializeField] Quaternion minRot, maxRot;
+
     protected Quaternion targetRot;
     protected Vector3 targetPos = Vector3.zero;
     protected bool thenDisable;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] AudioClip[] clips;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -36,6 +40,14 @@ public abstract class Card : MonoBehaviour
         targetPos = pos;
         if (rotate) targetRot = Quaternion.Lerp(minRot, maxRot, Random.Range(0.0f, 1f));
         //TODO animation
+        PlayRandomClip();
+    }
+
+    void PlayRandomClip()
+    {
+        if(!audioSource) audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clips[Random.Range(0, clips.Length)];
+        audioSource.Play();
     }
 
     public void RotateTo(Quaternion rot) {

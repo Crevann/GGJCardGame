@@ -34,7 +34,8 @@ public class F3VisualizeFeedback : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         currentFeedbackTime -= Time.deltaTime;
-        if(currentFeedbackTime <= 0) {
+        if(currentFeedbackTime <= 0 && currentFeedbackTime > -100) {
+            currentFeedbackTime = -100;
             NextState(animator);
         }
     }
@@ -49,7 +50,8 @@ public class F3VisualizeFeedback : StateMachineBehaviour
         
     }
     private void NextState(Animator animator) {
-        if (animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.maxProblems) {
+        DescriptionPage.Instance.StringToWrite = null;
+        if (animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.MaxProblems) {
             animator.SetTrigger(MatchStats.Instance.endGameParam);
         }
         else {
