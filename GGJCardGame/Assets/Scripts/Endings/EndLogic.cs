@@ -6,7 +6,7 @@ using TMPro;
 public class EndLogic : MonoBehaviour
 {
     [Tooltip("0: neutral\n1: body\n2: soul\n3: game over")]
-    [SerializeField] private string[] lifeEndings;
+    [SerializeField] [TextArea] private string[] lifeEndings;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private float neutralRange = 2;
 
