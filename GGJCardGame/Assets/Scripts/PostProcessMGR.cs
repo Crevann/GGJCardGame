@@ -12,6 +12,8 @@ public class PostProcessMGR : MonoBehaviour
     [SerializeField] Color red, black, blue;
     [SerializeField] float maxSinSpeed = 10;
     [SerializeField] float baseIntencity = 0.232f;
+    [SerializeField] SpriteRenderer fadeToBlack;
+    [SerializeField] float fadeToBlackSpeed;
     float currentBaseIntencity = 0.232f;
     float speed = 0;
     void Start()
@@ -41,6 +43,28 @@ public class PostProcessMGR : MonoBehaviour
         myVignette.color.Override(c);
     }
 
+    public bool FadeToBlack(bool on) {
+        if (on) {
+            fadeToBlack.color = new Color(
+                fadeToBlack.color.r, 
+                fadeToBlack.color.g, 
+                fadeToBlack.color.b, 
+                Mathf.Lerp(fadeToBlack.color.a, 1, fadeToBlackSpeed * Time.deltaTime));
+            if(fadeToBlack.color.a >= 0.995) {
+                return true;
+            }
+        }else if (!on) {
+            fadeToBlack.color = new Color(
+                fadeToBlack.color.r,
+                fadeToBlack.color.g,
+                fadeToBlack.color.b,
+                Mathf.Lerp(fadeToBlack.color.a, 0, fadeToBlackSpeed * Time.deltaTime));
+            if (fadeToBlack.color.a <= 0.05) {
+                return true;
+            }
+        }
+        return false;
+    }
     void Update()
     {
         

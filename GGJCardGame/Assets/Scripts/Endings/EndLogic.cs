@@ -27,4 +27,8 @@ public class EndLogic : MonoBehaviour
             }
         }
     }
+
+    private void Update() {
+        PostProcessMGR.Instance.FadeToBlack(false);
+    }
 }
