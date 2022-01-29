@@ -106,11 +106,10 @@ public class MatchStats : MonoBehaviour {
     public List<Minor> CurrentMinorsOnMajor { get { return currentMinorsOnMajor; } }
 
     [Header("SET PROBLEMS")]
-    [Range(0, 5)] [SerializeField] int maxProblems = 3;
-    public int MaxProblems {
-        get { if (!GameLogic.Instance) return maxProblems;
-            return maxProblems + (GameLogic.Instance.currentMatch >= 3 ? 1 : 0) + (GameLogic.Instance.currentMatch >= 5 ? 1 : 0); }
-    }
+    [Range(0, 5)] [HideInInspector] public int maxProblems = 3;
+    [Range(0, 5)] [SerializeField] private int easyMaxProblems = 3;
+    [Range(0, 5)] [SerializeField] private int mediumMaxProblems = 4;
+    [Range(0, 5)] [SerializeField] private int hardMaxProblems = 5;
     public Transform firstProblemPos, lastProblemPos;
     public Transform problemDeckPos;
     [SerializeField] private Problem[] currentProblems;
@@ -130,7 +129,7 @@ public class MatchStats : MonoBehaviour {
         currentMajorArcana = null;
         currentMinorArcanaHand = new Minor[PlayerStats.Instance.MaxCardHard];
         currentMinorsOnMajor = new List<Minor>();
-        currentProblems = new Problem[MaxProblems];
+        currentProblems = new Problem[maxProblems];
     }
 
     public void StartMatch(LevelDifficulty levelDifficulty) {
@@ -139,6 +138,20 @@ public class MatchStats : MonoBehaviour {
         MatchLogic.Instance.majorDeck.RestoreOriginalDeck();
         MatchLogic.Instance.minorDeck.RestoreOriginalDeck();
         MatchLogic.Instance.problemsDeck.RestoreOriginalDeck();
+        switch (difficulty) {
+            case LevelDifficulty.easy:
+                maxProblems = easyMaxProblems;
+                break;
+            case LevelDifficulty.medium:
+                maxProblems = mediumMaxProblems;
+                break;
+            case LevelDifficulty.hard:
+                maxProblems = hardMaxProblems;
+                break;
+            default:
+                break;
+        }
+        currentProblems = new Problem[maxProblems];
     }
     public void StartCardFlip() {
         bodyIngotIndicator.ChangeDigit(currentBodyIngots);

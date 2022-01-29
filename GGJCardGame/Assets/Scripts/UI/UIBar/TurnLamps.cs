@@ -25,7 +25,7 @@ public class TurnLamps : MonoBehaviour
     public void ActivateLamps() {
         for (int i = 0; i < lamps.Length; i++) {
             lamps[i].gameObject.SetActive(true);
-            if (i >= MatchStats.Instance.MaxProblems) {
+            if (i >= MatchStats.Instance.maxProblems) {
                 lamps[i].gameObject.SetActive(false);
             }
         }

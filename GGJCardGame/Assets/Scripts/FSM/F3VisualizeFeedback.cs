@@ -51,7 +51,7 @@ public class F3VisualizeFeedback : StateMachineBehaviour
     }
     private void NextState(Animator animator) {
         DescriptionPage.Instance.StringToWrite = null;
-        if (animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.MaxProblems) {
+        if (animator.GetInteger(MatchStats.Instance.currentTurnParam) >= MatchStats.Instance.maxProblems) {
             animator.SetTrigger(MatchStats.Instance.endGameParam);
         }
         else {

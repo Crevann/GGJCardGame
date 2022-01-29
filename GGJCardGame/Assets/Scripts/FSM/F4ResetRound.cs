@@ -16,6 +16,13 @@ public class F4ResetRound : StateMachineBehaviour
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.easy);
+        if(GameLogic.Instance.currentMatch + 1 < 2) {
+            MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.easy);
+        }else if(GameLogic.Instance.currentMatch + 1 < 5) {
+            MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.medium);
+        }
+        else {
+            MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.hard);
+        }
     }
 }

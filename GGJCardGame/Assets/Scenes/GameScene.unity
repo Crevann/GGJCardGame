@@ -6331,7 +6331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549454714}
   m_LocalRotation: {x: 0, y: 0, z: -0.30070576, w: 0.953717}
-  m_LocalPosition: {x: 3.9199998, y: 1.6700001, z: 0}
+  m_LocalPosition: {x: 3.9199998, y: 1.6700001, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6856,6 +6856,9 @@ MonoBehaviour:
   spacing: 0.8
   spacingTurns: 0
   maxProblems: 3
+  easyMaxProblems: 3
+  mediumMaxProblems: 4
+  hardMaxProblems: 5
   firstProblemPos: {fileID: 2027324665}
   lastProblemPos: {fileID: 549454715}
   problemDeckPos: {fileID: 1895567464}
@@ -6908,7 +6911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMatches: 5
-  currentMatch: 1
+  currentMatch: 0
 --- !u!1 &730164605
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,7 +8232,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a230a216caac61441b874f5666a17295, type: 2}
   m_audioClip: {fileID: 8300000, guid: 31d0c4e91142f4f4ba1f64bdc91f90c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.261
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8340,7 +8343,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a230a216caac61441b874f5666a17295, type: 2}
   m_audioClip: {fileID: 8300000, guid: 023bf5478d57e494f92a0d7850fea091, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8436,7 +8439,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: a230a216caac61441b874f5666a17295, type: 2}
   m_audioClip: {fileID: 8300000, guid: 348fc61768425d24e91a3b58506caff2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.111
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 1
   Mute: 0
