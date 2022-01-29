@@ -6,6 +6,8 @@ public class FirstSceneLoad : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        PlayerStats.body = 0;
+        PlayerStats.soul = 0;
         GameLogic.Instance.currentMatch = StaticLogic.matchNumber;
         if (GameLogic.Instance.currentMatch + 1 <= 2) {
             MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.easy);
