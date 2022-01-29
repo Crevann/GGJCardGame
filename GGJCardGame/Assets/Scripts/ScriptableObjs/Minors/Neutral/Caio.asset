@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc9d38268b1889448430b985a6f98d2, type: 3}
   m_Name: Caio
   m_EditorClassIdentifier: 
-  cardName: Caio
+  cardName: Wise master
   soulCoinsCost: 1
   bodyIngotCost: 1
   soul: 0
