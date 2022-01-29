@@ -1531,18 +1531,18 @@ PrefabInstance:
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1078581173}
+      objectReference: {fileID: 1078581168}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSettingsScene
+      value: ChangeResumeGameScene
       objectReference: {fileID: 0}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ButtonSettings, Assembly-CSharp
+      value: ButtonNewGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

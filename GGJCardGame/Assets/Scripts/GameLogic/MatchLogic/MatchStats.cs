@@ -174,10 +174,12 @@ public class MatchStats : MonoBehaviour {
         CurrentSoulCoins = 0;
         CurrentBodyIngots = 0;
         currentStability = 0;
-        EmptyHands();
-        EmptyCardsOnMajor();
-        EmptyProblems();
-        StartCardFlip();
+        if (currentMajorArcana != null) {
+            EmptyHands();
+            EmptyCardsOnMajor();
+            EmptyProblems();
+            StartCardFlip();
+        }
     }
 
     public void EmptyHands() {

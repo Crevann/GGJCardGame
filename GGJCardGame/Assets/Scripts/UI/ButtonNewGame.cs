@@ -22,6 +22,11 @@ public class ButtonNewGame : MonoBehaviour
 
     public void ChangeGameScene()
     {
+        StaticLogic.matchNumber = 1;
+        SceneManager.LoadScene("GameScene");
+    }
+    public void ChangeResumeGameScene()
+    {
         SceneManager.LoadScene("GameScene");
     }
 }
