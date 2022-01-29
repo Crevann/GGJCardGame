@@ -7,7 +7,7 @@ public class CounterLights : MonoBehaviour
     [SerializeField] private GameObject[] lights;
 
     private void Update() {
-        int light = Mathf.Clamp(-PlayerStats.Instance.soul + PlayerStats.Instance.body + 6, 0, 12);
+        int light = Mathf.Clamp(-PlayerStats.soul + PlayerStats.body + 6, 0, 12);
         EnableLight(light);
     }
 

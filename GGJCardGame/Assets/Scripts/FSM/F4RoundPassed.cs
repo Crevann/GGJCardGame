@@ -13,7 +13,10 @@ public class F4RoundPassed : StateMachineBehaviour
         CalculateBodySoulLevel();
         clockHand.Rotate();
         if(animator.GetInteger(MatchStats.Instance.currentMatchParam) >= GameLogic.Instance.maxMatches) {
-            SceneManager.LoadScene(2); //TODO go to victory scene
+            MatchLogic.Instance.CleanTable();
+            for (int i = 0; i < 5; i++) {
+                TurnLamps.Instance.TurnOffLamp(i);
+            }
             animator.SetTrigger(MatchStats.Instance.endGameParam);
         }
         else {
@@ -23,8 +26,8 @@ public class F4RoundPassed : StateMachineBehaviour
 
     private void CalculateBodySoulLevel() {
         foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {
-            PlayerStats.Instance.body += minor.Body;
-            PlayerStats.Instance.soul += minor.Soul;
+            PlayerStats.body += minor.Body;
+            PlayerStats.soul += minor.Soul;
         }
     }
 }

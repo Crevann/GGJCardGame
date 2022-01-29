@@ -43,4 +43,19 @@ public class MatchLogic : MonoBehaviour
     public void EndTurn() {
         MatchStats.Instance.animator.SetTrigger(MatchStats.Instance.finishedStateParam);
     }
+    public void CleanTable() {
+        foreach (Minor minor in MatchStats.Instance.CurrentMinorArcanaHand) {
+            if (minor == null) continue;
+            minor.MoveTo(minorDeck.transform.position, true);
+        }
+        foreach (Minor minor in MatchStats.Instance.CurrentMinorsOnMajor) {
+            minor.ResetCard();
+            minor.MoveTo(minorDeck.transform.position, true);
+        }
+        foreach (Problem problem in MatchStats.Instance.CurrentProblems) {
+            problem.MoveTo(problemsDeck.transform.position, true);
+        }
+        DescriptionPage.Instance.StringToWrite = null;
+        MatchStats.Instance.CurrentMajorArcana.MoveTo(MatchStats.Instance.majorDeckPos.position, true);
+    }
 }

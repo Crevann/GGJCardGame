@@ -39,6 +39,9 @@ public class F3VisualizeFeedback : StateMachineBehaviour
             NextState(animator);
         }
     }
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        DescriptionPage.Instance.StringToWrite = null;
+    }
 
     private void ShowFeedback(string[] feedback) {
         DescriptionPage.Instance.StringToWrite = feedback[Random.Range(0, feedback.Length)];
