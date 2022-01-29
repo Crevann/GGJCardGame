@@ -127,8 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBack: {fileID: 0}
   movementSpeed: 4
-  minRot: {x: 0, y: 0, z: 0.3007058, w: 0.95371693}
-  maxRot: {x: 0, y: 0, z: 0.30070588, w: -0.95371693}
+  minRot: {x: 0, y: 0, z: 0.1305262, w: 0.9914449}
+  maxRot: {x: 0, y: 0, z: -0.1305262, w: 0.9914449}
   audioSource: {fileID: 6364958322729595782}
   clips:
   - {fileID: 8300000, guid: b1d973ff1ebf3cc4284fcd32989f752b, type: 3}
