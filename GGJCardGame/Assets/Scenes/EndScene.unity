@@ -154,6 +154,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7774637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7774638}
+  - component: {fileID: 7774640}
+  - component: {fileID: 7774639}
+  m_Layer: 5
+  m_Name: Signature
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7774638
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774637}
+  m_LocalRotation: {x: -0, y: -0, z: 0.015742585, w: 0.9998761}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 819148355}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.804}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 158, y: -380.5}
+  m_SizeDelta: {x: 92, y: 56}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7774639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 044757f95ea12d54793faa637bf68082, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &7774640
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774637}
+  m_CullTransparentMesh: 1
 --- !u!1 &209773529
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +413,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1074871984}
+  - {fileID: 7774638}
   m_Father: {fileID: 1367802935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -396,10 +473,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeEndings:
-  - Neutral ending
-  - Body ending
-  - Soul ending
-  - Game over
+  - "I see you tended the needs of both body and souls. \nThey are perfectly balanced,
+    as all things should be! \nTo avoid having the neelde tip significantly either
+    way is perhaps the most difficult thing to achieve, or perhaps you simply couldn't
+    decide what's more important.\r\nAny way, do you think you'd be able to obtain
+    this result again?"
+  - "\nCongratulations! \nYou passed every test with flying colors, albeit with more
+    raw strength than finesse. \nThat said, You seem eager to play again. So, are
+    we starting yet?"
+  - "Congratulations! \nYou survived! \nI honestly didn't expect you to get this
+    far. \nYour actions led you down a more spiritual path, did you plan for it?\r\nEagerly
+    awaiting for our next match."
+  - '
+
+    Perhaps you''re not yet ready for me.
+
+    However, I''d wager with some
+    more rounds under your belt you could overcome all my challenges.
+
+    Should
+    we begin anew?'
   text: {fileID: 1074871987}
   neutralRange: 2
 --- !u!1 &883604414
@@ -751,7 +844,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sei un idiota
+  m_text: "\nCongratulations! \nYou passed every test with flying colors, albeit
+    with more raw strength than finesse. \nThat said, You seem eager to play again.
+    So, are we starting yet?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c714d477cbf6f3b4b84ed3c3277754bc, type: 2}
   m_sharedMaterial: {fileID: -2063944997048800808, guid: c714d477cbf6f3b4b84ed3c3277754bc, type: 2}
@@ -792,7 +887,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 260
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4

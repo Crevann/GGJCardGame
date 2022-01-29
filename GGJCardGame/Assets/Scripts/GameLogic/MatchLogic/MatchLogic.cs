@@ -18,6 +18,9 @@ public class MatchLogic : MonoBehaviour
     }
 
     private void Awake() {
+        if(KeepAudio.instance != null) {
+            Destroy(KeepAudio.instance.gameObject);
+        }
         if (instance == null) {
             instance = this;
         }
