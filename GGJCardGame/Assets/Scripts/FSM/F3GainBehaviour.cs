@@ -9,6 +9,6 @@ public class F3GainBehaviour : StateMachineBehaviour
         MatchStats.Instance.CurrentBodyIngots += MatchStats.Instance.CurrentMajorArcana.BodyIngotGain;
         MatchStats.Instance.CurrentSoulCoins += MatchStats.Instance.CurrentMajorArcana.SoulCoinGain;
         animator.SetTrigger(MatchStats.Instance.finishedStateParam);
-        //TODO animation
+
     }
 }

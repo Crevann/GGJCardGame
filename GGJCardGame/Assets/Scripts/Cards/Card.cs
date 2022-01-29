@@ -39,7 +39,6 @@ public abstract class Card : MonoBehaviour
         
         targetPos = pos;
         if (rotate) targetRot = Quaternion.Lerp(minRot, maxRot, Random.Range(0.0f, 1f));
-        //TODO animation
         PlayRandomClip();
     }
 

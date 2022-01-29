@@ -17,7 +17,7 @@ public class CardDisplacement : MonoBehaviour
             instance = this;
         }
     }
-    public void DisplayCards() { //TODO ridurre il numero di variabili a 3
+    public void DisplayCards() {
         Minor[] currentCards = MatchStats.Instance.CurrentMinorArcanaHand;
         int cardsInHand = MatchStats.Instance.CurrentMinorArcanaInHand();
         spacing = cardsInHand > 2 ? handSize / (cardsInHand - 1) : handSize;
