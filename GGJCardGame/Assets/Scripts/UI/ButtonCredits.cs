@@ -10,7 +10,7 @@ public class ButtonCredits : MonoBehaviour
 
     void Awake()
     {
-        buttonNewGame.onClick.AddListener(ExitGame);
+        buttonNewGame.onClick.AddListener(ChangeCreditsScene);
     }
 
     // Update is called once per frame
@@ -18,7 +18,9 @@ public class ButtonCredits : MonoBehaviour
     {
 
     }
-
+    public void ChangeCreditsScene() {
+        SceneManager.LoadScene("Credits");
+    }
 
     public void ExitGame()
     {

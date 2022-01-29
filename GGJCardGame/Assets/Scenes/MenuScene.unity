@@ -514,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitGame
+      value: ChangeCreditsScene
       objectReference: {fileID: 0}
     - target: {fileID: 9122440593652957745, guid: 3a145dd3eee42be4890dca3c61e037dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
