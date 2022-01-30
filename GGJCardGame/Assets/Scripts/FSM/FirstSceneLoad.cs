@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class FirstSceneLoad : StateMachineBehaviour
 {
+    private ClockHand clockHand;
+    private void Awake() {
+        clockHand = GameObject.Find("UIPointer").GetComponent<ClockHand>();
+    }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        PlayerStats.body = 0;
-        PlayerStats.soul = 0;
+        PlayerStats.body = StaticLogic.body;
+        PlayerStats.soul = StaticLogic.soul;
+        clockHand.Rotate();
         GameLogic.Instance.currentMatch = StaticLogic.matchNumber;
-        if (GameLogic.Instance.currentMatch + 1 <= 2) {
+        if (GameLogic.Instance.currentMatch < 3) {
             MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.easy);
-        } else if (GameLogic.Instance.currentMatch + 1 < 5) {
+        } else if (GameLogic.Instance.currentMatch < 5) {
             MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.medium);
         } else {
             MatchStats.Instance.StartMatch(MatchStats.LevelDifficulty.hard);

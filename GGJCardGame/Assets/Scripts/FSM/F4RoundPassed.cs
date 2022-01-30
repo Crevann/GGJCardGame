@@ -29,5 +29,7 @@ public class F4RoundPassed : StateMachineBehaviour
             PlayerStats.body += minor.Body;
             PlayerStats.soul += minor.Soul;
         }
+        StaticLogic.soul = PlayerStats.soul;
+        StaticLogic.body = PlayerStats.body;
     }
 }
